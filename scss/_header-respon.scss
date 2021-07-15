@@ -1,21 +1,33 @@
-.logo {
-    @include responsive(lg) {
-        margin: 8px;
-        width: 80%;
-    }
+/* HEADER */
+.div-logo {
     @include responsive(md) {
-        margin: 8px;
-        width: 60%;
+        margin-left: 70px;
     }
     @include responsive(sm) {
-        margin: 10px;
-        margin-left: 90px;
-        width: 40%;
+        margin-left: 0px;
     }
     @include responsive(xs) {
-        margin: 8px;
-        margin-left: 50px;
-        width: 40%;
+        margin-left: 0px;
+    }
+    .logo {
+        @include responsive(lg) {
+            margin: 8px;
+            width: 80%;
+        }
+        @include responsive(md) {
+            margin: 8px;
+            width: 60%;
+        }
+        @include responsive(sm) {
+            margin: 10px;
+            margin-left: 70px;
+            width: 40%;
+        }
+        @include responsive(xs) {
+            margin: 8px;
+            margin-left: 50px;
+            width: 40%;
+        }
     }
 }
 
@@ -26,12 +38,11 @@
     @include responsive(sm) {
         display: block;
     }
-    // @include responsive(xs) {
-    //     display: block;
-    // }
     .btn-menu-tab {
         @include responsive(sm) {
             margin-top: 15px;
+            width: 90px;
+            height: 25px;
         }
     }
 }
@@ -56,22 +67,18 @@
 
 .nav-menu-content {
     @include responsive(md) {
-        margin-top: 40px;
-        margin-left: -40px;
+        margin-top: 60px;
         margin-bottom: 10px;
     }
     @include responsive(sm) {
-        margin-top: 40px;
-        margin-left: -100px;
+        margin-top: 60px;
         margin-bottom: 10px;
     }
     .nav-menu {
         @include responsive(md) {
-            display: flex;
             flex-direction: column;
         }
         @include responsive(sm) {
-            display: flex;
             flex-direction: column;
         }
         li {
@@ -81,49 +88,34 @@
             @include responsive(lg) {
                 padding: 5px 5px;
             }
-
             a {
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 20px;
-                z-index: 1;
                 @include responsive(lg) {
                     font-size: 15px;
                 }
             }
-
-            .nav-item{
-                position: absolute;
-                bottom: 0;
-                height: 10%;
-                width: 100%;
-                left: -50%;
-                transform: translate(50%);
-                transition: 0.3s;
-            }
-
-            &:hover {
-                a{
-                    color: $white;
-                }
-                .nav-item {
-                    height: 100%;
-                    border-radius: 15px 15px 0 0 ;
-                }
-            }
         }
-        
-        $i: 1;
-        @each $name in $name-pages {
-            .nav-#{$name} {
-                .nav-item {
-                    background-color: nth($pages, $i);
-                }
-                a {
-                    color: nth($pages, $i);
-                }
+    }
+}
+
+/* SLIDE */
+.slide-show {
+    .carousel {
+        img {
+            @include responsive(xl) {
+                height: 500px;
             }
-            $i: $i + 1;
+            @include responsive(lg) {
+                height: 400px;
+            }
+            @include responsive(md) {
+                height: 350px;
+            }
+            @include responsive(sm) {
+                height: 300px;
+            }
+            @include responsive(xs) {
+                height: 200px;
+            }
         }
     }
 }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/slick.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
@@ -23,9 +24,9 @@
 
         <!-- HEADER -->
         <header>
-            <div class="container">
+            <div >
                 <div class="d-flex">
-                    <div>
+                    <div class="div-logo">
                         <a href="index.html">
                             <img src="../images/logo.png" class="logo">
                         </a>
@@ -43,27 +44,27 @@
                             <li class="d-inline-flex nav-data">
                                 <div class="nav-item">
                                 </div>
-                                <a href="index.html">PokeData</a>
+                                <a href="data.html">PokeData</a>
                             </li>
                             <li class="d-inline-flex nav-movie">
                                 <div class="nav-item">
                                 </div>
-                                <a href="index.html">PokeMovie</a>
+                                <a href="movie.html">PokeMovie</a>
                             </li>
                             <li class="d-inline-flex nav-game">
                                 <div class="nav-item">
                                 </div>
-                                <a href="index.html">PokeGame</a>
+                                <a href="game.html">PokeGame</a>
                             </li>
                             <li class="d-inline-flex nav-shop">
                                 <div class="nav-item">
                                 </div>
-                                <a href="index.html">PokeShop</a>
+                                <a href="shop.html">PokeShop</a>
                             </li>
                             <li class="d-inline-flex nav-news">
                                 <div class="nav-item">
                                 </div>
-                                <a href="index.html">PokeNews</a>
+                                <a href="news.html">PokeNews</a>
                             </li>
                         </ul>
                     </div>
@@ -72,21 +73,65 @@
                     <div id="myNav" class="overlay">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                         <div class="overlay-content">
-                            <a href="index.html" class="nav-home">PokeHome</a>
-                            <a href="index.html" class="nav-data">PokeData</a>
-                            <a href="index.html" class="nav-movie">PokeMovie</a>
-                            <a href="index.html" class="nav-game">PokeGame</a>
-                            <a href="index.html" class="nav-shop">PokeShop</a>
-                            <a href="index.html" class="nav-news">PokeNews</a>
-                            </ul>
+                            <div class="nav-home">
+                                <a href="index.html">PokeHome</a>
+                            </div>
+                            <div class="nav-data">
+                                <a href="data.html">PokeData</a>
+                            </div>
+                            <div class="nav-movie">
+                                <a href="movie.html">PokeMovie</a>
+                            </div>
+                            <div class="nav-game">
+                                <a href="game.html">PokeGame</a>
+                            </div>
+                            <div class="nav-shop">
+                                <a href="shop.html">PokeShop</a>
+                            </div>
+                            <div class="nav-news">
+                                <a href="news.html">PokeNews</a>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </header>
+
+        <!-- SLIDE -->
+        <div class="slide-show">
+            <div class="container">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../images/home.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/data.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/movie.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/slick.js"></script>
     <script src="../js/menu.js"></script>
 </body>
 
