@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+header {
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  margin: 10px;
+}
+
+.move-top {
+  position: fixed;
+  z-index: 1000;
+  right: 30px;
+  bottom: 30px;
+}
+
+#btn-menu {
+  display: none;
+  position: absolute;
+  right: 15%;
+}
+#btn-menu .btn-menu-tab {
+  border-radius: 3px;
+  border: none;
+  width: 110px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+#menu {
+  display: block;
+}
+
+.nav-menu-content {
+  margin: auto;
+}
+.nav-menu-content .nav-menu {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+.nav-menu-content .nav-menu li {
+  position: relative;
+  padding: 10px 20px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+.nav-menu-content .nav-menu li a {
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 1;
+}
+.nav-menu-content .nav-menu li .nav-item {
+  position: absolute;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+  left: -50%;
+  transform: translate(50%);
+  transition: 0.3s;
+}
+.nav-menu-content .nav-menu li:hover a {
+  color: #fff;
+}
+.nav-menu-content .nav-menu li:hover .nav-item {
+  height: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+#navi-mobile {
+  display: none;
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  right: 10%;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 45px;
+  font-size: 60px;
+  color: white;
+}
+.overlay .overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.overlay .overlay-content a {
+  padding: 8px;
+  font-size: 30px;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-home {
+  color: #03a9f4;
+}
+.nav-home .nav-item {
+  background-color: #03a9f4;
+}
+
+.nav-data {
+  color: #ffaa00;
+}
+.nav-data .nav-item {
+  background-color: #ffaa00;
+}
+
+.nav-movie {
+  color: #7fe5f0;
+}
+.nav-movie .nav-item {
+  background-color: #7fe5f0;
+}
+
+.nav-game {
+  color: #ff668f;
+}
+.nav-game .nav-item {
+  background-color: #ff668f;
+}
+
+.nav-shop {
+  color: #4caf50;
+}
+.nav-shop .nav-item {
+  background-color: #4caf50;
+}
+
+.nav-news {
+  color: #ED3B15;
+}
+.nav-news .nav-item {
+  background-color: #ED3B15;
+}
+
+/*# sourceMappingURL=index.css.map */

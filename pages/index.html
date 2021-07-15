@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body onload="BackTopPage()">
+    <div id="top">
+
+        <!-- MOVE TOP -->
+        <div class="move-top">
+            <a href="#top">
+                <img src="../images/move-top.png" alt="">
+            </a>
+        </div>
+
+        <!-- HEADER -->
+        <header>
+            <div class="container">
+                <div class="d-flex">
+                    <div>
+                        <a href="index.html">
+                            <img src="../images/logo.png" class="logo">
+                        </a>
+                    </div>
+                    <a href="javascript:void(0);" id="btn-menu" onclick="myFunction()">
+                        <button class="btn-menu-tab">MENU</button>
+                    </a>
+                    <div class="nav-menu-content" id="menu">
+                        <ul class="d-flex nav-menu">
+                            <li class="d-inline-flex nav-home">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeHome</a>
+                            </li>
+                            <li class="d-inline-flex nav-data">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeData</a>
+                            </li>
+                            <li class="d-inline-flex nav-movie">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeMovie</a>
+                            </li>
+                            <li class="d-inline-flex nav-game">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeGame</a>
+                            </li>
+                            <li class="d-inline-flex nav-shop">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeShop</a>
+                            </li>
+                            <li class="d-inline-flex nav-news">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeNews</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <span id="navi-mobile" onclick="openNav()">&#9776;</span>
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <a href="index.html" class="nav-home">PokeHome</a>
+                            <a href="index.html" class="nav-data">PokeData</a>
+                            <a href="index.html" class="nav-movie">PokeMovie</a>
+                            <a href="index.html" class="nav-game">PokeGame</a>
+                            <a href="index.html" class="nav-shop">PokeShop</a>
+                            <a href="index.html" class="nav-news">PokeNews</a>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <script src="../js/menu.js"></script>
+</body>
+
+</html>

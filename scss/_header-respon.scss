@@ -1,0 +1,129 @@
+.logo {
+    @include responsive(lg) {
+        margin: 8px;
+        width: 80%;
+    }
+    @include responsive(md) {
+        margin: 8px;
+        width: 60%;
+    }
+    @include responsive(sm) {
+        margin: 10px;
+        margin-left: 90px;
+        width: 40%;
+    }
+    @include responsive(xs) {
+        margin: 8px;
+        margin-left: 50px;
+        width: 40%;
+    }
+}
+
+#btn-menu {
+    @include responsive(md) {
+        display: block;
+    }
+    @include responsive(sm) {
+        display: block;
+    }
+    // @include responsive(xs) {
+    //     display: block;
+    // }
+    .btn-menu-tab {
+        @include responsive(sm) {
+            margin-top: 15px;
+        }
+    }
+}
+
+#menu {
+    @include responsive(md) {
+        display: none;
+    }
+    @include responsive(sm) {
+        display: none;
+    }
+    @include responsive(xs) {
+        display: none;
+    }
+}
+
+#navi-mobile {
+    @include responsive(xs) {
+        display: block;
+    }
+}
+
+.nav-menu-content {
+    @include responsive(md) {
+        margin-top: 40px;
+        margin-left: -40px;
+        margin-bottom: 10px;
+    }
+    @include responsive(sm) {
+        margin-top: 40px;
+        margin-left: -100px;
+        margin-bottom: 10px;
+    }
+    .nav-menu {
+        @include responsive(md) {
+            display: flex;
+            flex-direction: column;
+        }
+        @include responsive(sm) {
+            display: flex;
+            flex-direction: column;
+        }
+        li {
+            @include responsive(xl) {
+                padding: 5px 10px;
+            }
+            @include responsive(lg) {
+                padding: 5px 5px;
+            }
+
+            a {
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 20px;
+                z-index: 1;
+                @include responsive(lg) {
+                    font-size: 15px;
+                }
+            }
+
+            .nav-item{
+                position: absolute;
+                bottom: 0;
+                height: 10%;
+                width: 100%;
+                left: -50%;
+                transform: translate(50%);
+                transition: 0.3s;
+            }
+
+            &:hover {
+                a{
+                    color: $white;
+                }
+                .nav-item {
+                    height: 100%;
+                    border-radius: 15px 15px 0 0 ;
+                }
+            }
+        }
+        
+        $i: 1;
+        @each $name in $name-pages {
+            .nav-#{$name} {
+                .nav-item {
+                    background-color: nth($pages, $i);
+                }
+                a {
+                    color: nth($pages, $i);
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+}
