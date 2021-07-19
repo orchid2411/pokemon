@@ -1,3 +1,4 @@
+$xxs: 320px;
 $xs: 480px;
 $sm: 576px;
 $md: 767px;
@@ -6,7 +7,7 @@ $xl: 1200px;
 
 @mixin responsive($canvas) {
     @if $canvas == xs {
-        @media screen and (max-width: $xs) {
+        @media screen and (min-width: $xxs) and (max-width: $xs) {
             @content;
         }
     }

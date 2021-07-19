@@ -1,0 +1,174 @@
+/* Title and logo */
+.title-logo {
+    img {
+        // width: 6%;
+        @include responsive(xl) {
+            width: 8%;
+        }
+        @include responsive(lg) {
+            width: 10%;
+        }
+        @include responsive(md) {
+            width: 10%;
+        }
+        @include responsive(sm) {
+            width: 14%;
+        }
+        @include responsive(xs) {
+            width: 18%;
+        }
+    }
+
+    h2 {
+        @include responsive(md) {
+            font-size: 25px;
+        }
+        @include responsive(xs) {
+            font-size: 28px;
+        }
+    }
+}
+
+// /* Pokedex */
+// .back-card {
+//     position: relative;
+//     margin: auto;
+// }
+
+.card-item-data {
+    // position: absolute;
+    // top: 6%;
+    // margin-left: 8px;
+    @include responsive(md) {
+        top: 1%;
+    }
+
+    img {
+        // width: 25%;
+        // margin-left: 50px;
+        // margin-bottom: 10px;
+        // margin-top: 5px;
+        @include responsive(xl) {
+            // width: 10%;
+            margin-bottom: 30px;
+            margin-left: 57.5px;
+        }
+        @include responsive(lg) {
+            width: 25%;
+            // margin-top: 15px;
+            margin-bottom: 0px;
+            margin-left: 40px;
+        }
+        @include responsive(md) {
+            width: 20%;
+            // margin-top: 5px;
+            margin-bottom: 0px;
+            margin-left: 20px;
+        }
+        @include responsive(sm) {
+            width: 40%;
+            // margin-top: 5px;
+            margin-bottom: 30px;
+            margin-left: 85px;
+        }
+        @include responsive(xs) {
+            width: 20%;
+            // max-width: 50%;
+            // width: auto;
+            // margin-top: 5px;
+            margin-bottom: 20px;
+            margin-left: 50px;
+        }
+    }
+
+    .card-body {
+        // color: $white;
+        // font-size: 14px;
+        // line-height: 1.8;
+        @include responsive(xl) {
+            font-size: 18px;
+            // line-height: 1.5;
+        }
+        @include responsive(lg) {
+            font-size: 16px;
+            line-height: 1.5;
+            // margin-left: -15px;
+        }
+        @include responsive(md) {
+            font-size: 12px;
+            line-height: 1.3;
+            margin-left: -10px;
+        }
+        @include responsive(sm) {
+            font-size: 28px;
+            line-height: 1.5;
+            margin-left: 10px;
+        }
+        @include responsive(xs) {
+            // font-size: 28px;
+            line-height: 1.5;
+            // margin-left: 10px;
+        }
+
+        .btn {
+            // width: 80px;
+            // border: none;
+            // color: $white;
+            // border-radius: 10px;
+            // font-size: 12px;
+            // font-weight: 600;
+            // padding: 5px;
+            // @include responsive(xl) {
+            //     // font-size: 16px;
+            // }
+            @include responsive(md) {
+                width: 60px;
+                font-size: 10px;
+                padding: 2px;
+            }
+            @include responsive(sm) {
+                width: 100px;
+                font-size: 18px;
+                // padding: 2px;
+            }
+        }
+
+        .one-item {    
+            // margin-left: 65px;
+            @include responsive(xl) {
+                margin-left: 80px;
+            }
+            @include responsive(lg) {
+                margin-left: 45px;
+            }
+            @include responsive(md) {
+                margin-left: 35px;
+            }
+            @include responsive(sm) {
+                margin-left: 100px;
+            }
+            @include responsive(xs) {
+                margin-left: 45px;
+            }
+        }
+
+        .two-item {
+            // margin-left: 16px;
+            @include responsive(xl) {
+                margin-left: 30px;
+            }
+            @include responsive(lg) {
+                margin-left: 3px;
+            }
+            @include responsive(md) {
+                margin-left: 2px;
+            }
+            @include responsive(sm) {
+                margin-left: 40px;
+            }
+            @include responsive(xs) {
+                margin-left: 2px;
+            }
+        }
+    }
+}

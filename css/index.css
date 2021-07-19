@@ -181,4 +181,138 @@ a {
   height: 650px;
 }
 
+/* MAIN */
+main {
+  background-color: #000;
+  padding-top: 50px;
+}
+
+/* Title and logo */
+.title-logo img {
+  width: 6%;
+}
+.title-logo h2 {
+  padding-top: 20px;
+  padding-left: 10px;
+  font-size: 40px;
+}
+
+/* Pokedex */
+.back-card {
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+
+.card-item-data {
+  position: absolute;
+  top: 8%;
+  opacity: 0.5;
+}
+.card-item-data img {
+  width: 30%;
+  margin-left: 40px;
+}
+.card-item-data .card-body {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.card-item-data .card-body .btn {
+  width: 80px;
+  padding: 5px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.card-item-data .card-body .one-item {
+  margin-left: 65px;
+}
+.card-item-data .card-body .two-item {
+  margin-left: 16px;
+}
+
+.slick-center .card-item-data {
+  opacity: 1;
+}
+.slick-center .card-item-data img {
+  transform: scale(1.5);
+  transition: 1s;
+}
+
+/* Color type */
+.btn-bug {
+  background-color: #ab2;
+}
+
+.btn-dark {
+  background-color: #754;
+}
+
+.btn-dragon {
+  background-color: #76e;
+}
+
+.btn-electric {
+  background-color: #fc3;
+}
+
+.btn-fairy {
+  background-color: #e9e;
+}
+
+.btn-fighting {
+  background-color: #c85500;
+}
+
+.btn-fire {
+  background-color: #f42;
+}
+
+.btn-flying {
+  background-color: #79bcd7;
+}
+
+.btn-ghost {
+  background-color: #66b;
+}
+
+.btn-grass {
+  background-color: #7c5;
+}
+
+.btn-ground {
+  background-color: #db5;
+}
+
+.btn-ice {
+  background-color: #6cf;
+}
+
+.btn-normal {
+  background-color: #aa9;
+}
+
+.btn-poison {
+  background-color: #a59;
+}
+
+.btn-psychic {
+  background-color: #f59;
+}
+
+.btn-rock {
+  background-color: #ba6;
+}
+
+.btn-steel {
+  background-color: #aab;
+}
+
+.btn-water {
+  background-color: #39f;
+}
+
 /*# sourceMappingURL=index.css.map */
