@@ -167,30 +167,30 @@ $(document).ready(() => {
                 </div>`)
         }
         $('.movie').slick({
-                centerMode: true,
-                infinite: true,
-                slidesToShow: 3,
-                speed: 800,
-                variableWidth: false,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            slidesToShow: 1
-                        }
+            centerMode: true,
+            infinite: true,
+            slidesToShow: 3,
+            speed: 800,
+            variableWidth: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        slidesToShow: 3
                     }
-                ]
-            });
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
     }) 
 
 })

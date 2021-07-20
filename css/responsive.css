@@ -351,4 +351,18 @@
   }
 }
 
+/* Pokegame */
+@media screen and (min-width: 481px) and (max-width: 576px) {
+  .game img {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .game img {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
 /*# sourceMappingURL=responsive.css.map */

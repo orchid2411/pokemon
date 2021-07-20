@@ -85,7 +85,6 @@ $i: 1;
     img {
         width: 70%;
         margin: auto;
-        // height: 400px;
     }
 
     p {
@@ -96,5 +95,19 @@ $i: 1;
         &:last-child {
             font-size: 14px;
         }
+    }
+}
+
+/* Pokegame */
+.game {
+    img {
+        width: 100%;
+    }
+
+    p {
+        color: $white;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 10px;
     }
 }

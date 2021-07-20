@@ -335,4 +335,15 @@ main {
   font-size: 14px;
 }
 
+/* Pokegame */
+.game img {
+  width: 100%;
+}
+.game p {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
 /*# sourceMappingURL=index.css.map */
