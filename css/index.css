@@ -184,10 +184,13 @@ a {
 /* MAIN */
 main {
   background-color: #000;
-  padding-top: 50px;
 }
 
 /* Title and logo */
+.title-logo {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
 .title-logo img {
   width: 6%;
 }
@@ -313,6 +316,23 @@ main {
 
 .btn-water {
   background-color: #39f;
+}
+
+/* Pokemovie */
+.movie {
+  color: #fff;
+}
+.movie img {
+  width: 70%;
+  margin: auto;
+}
+.movie p {
+  text-align: center;
+  margin: auto;
+  margin-top: 5px;
+}
+.movie p:last-child {
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=index.css.map */

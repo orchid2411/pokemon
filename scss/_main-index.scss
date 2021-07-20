@@ -1,11 +1,12 @@
 /* MAIN */
 main {
     background-color: $black;
-    padding-top: 50px;
 }
 
 /* Title and logo */
 .title-logo {
+    padding-top: 50px;
+    padding-bottom: 20px;
     img {
         width: 6%;
     }
@@ -76,4 +77,24 @@ $i: 1;
             background-color: nth($types, $i);
     }
     $i: $i + 1;
+}
+
+/* Pokemovie */
+.movie {
+    color: $white;
+    img {
+        width: 70%;
+        margin: auto;
+        // height: 400px;
+    }
+
+    p {
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+
+        &:last-child {
+            font-size: 14px;
+        }
+    }
 }
