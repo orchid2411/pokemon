@@ -336,14 +336,28 @@ main {
 }
 
 /* Pokegame */
-.game img {
+.game img, .shop img {
   width: 100%;
 }
-.game p {
+.game p, .shop p {
   color: #fff;
   font-size: 18px;
   text-align: center;
   margin-top: 10px;
+}
+
+/* Pokeshop */
+.shop img {
+  border-radius: 30px;
+}
+.shop .img-hid-1 {
+  display: none;
+}
+.shop .img-pos:hover .img-hid-1 {
+  display: block;
+}
+.shop .img-pos:hover .img-hid-2 {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

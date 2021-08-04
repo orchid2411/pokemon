@@ -111,3 +111,23 @@ $i: 1;
         margin-top: 10px;
     }
 }
+
+/* Pokeshop */
+.shop {
+    @extend .game;
+    img {
+        border-radius: 30px;
+    }
+
+    .img-hid-1 {
+        display: none;
+    }
+
+    .img-pos:hover .img-hid-1 {
+        display: block;
+    }
+
+    .img-pos:hover .img-hid-2 {
+        display: none;
+    }  
+}
