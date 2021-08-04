@@ -170,3 +170,22 @@
         }
     }
 }
+
+/* PokeShop */
+.shop {
+    @extend .game;
+}
+
+/* PokeNews */
+.news {
+    .news-item {
+        @include responsive(sm) {
+            width: 80%;
+            margin-left: 10%;
+        }
+        @include responsive(xs) {
+            width: 70%;
+            margin-left: 15%;
+        }
+    }
+}

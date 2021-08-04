@@ -7,7 +7,7 @@
         margin-left: 0px;
     }
     @include responsive(xs) {
-        margin-left: 0px;
+        margin-left: 100px;
     }
     .logo {
         @include responsive(lg) {
@@ -117,5 +117,21 @@
                 height: 200px;
             }
         }
+    }
+}
+
+/* SLIDE */
+.slide-show {
+    @include responsive(lg) {
+        padding-top: 82px;
+    }
+    @include responsive(md) {
+        padding-top: 66px;
+    }
+    @include responsive(sm) {
+        padding-top: 64px;
+    }
+    @include responsive(xs) {
+        padding-top: 49px;
     }
 }

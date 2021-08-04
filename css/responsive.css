@@ -11,7 +11,7 @@
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .div-logo {
-    margin-left: 0px;
+    margin-left: 100px;
   }
 }
 @media screen and (min-width: 767px) and (max-width: 992px) {
@@ -143,6 +143,28 @@
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .slide-show .carousel img {
     height: 200px;
+  }
+}
+
+/* SLIDE */
+@media screen and (min-width: 767px) and (max-width: 992px) {
+  .slide-show {
+    padding-top: 82px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .slide-show {
+    padding-top: 66px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 576px) {
+  .slide-show {
+    padding-top: 64px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .slide-show {
+    padding-top: 49px;
   }
 }
 
@@ -353,13 +375,28 @@
 
 /* Pokegame */
 @media screen and (min-width: 481px) and (max-width: 576px) {
-  .game img {
+  .game img, .shop img {
     width: 80%;
     margin-left: 10%;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .game img {
+  .game img, .shop img {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
+/* PokeShop */
+/* PokeNews */
+@media screen and (min-width: 481px) and (max-width: 576px) {
+  .news .news-item {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .news .news-item {
     width: 70%;
     margin-left: 15%;
   }

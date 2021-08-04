@@ -241,4 +241,39 @@ $(document).ready(() => {
                     </div>`)
         }
     })  
+
+    /* PokeNews */
+    const dlnews = $.getJSON("../js/news.json", function () {
+        const news = [];
+        news[0] = Math.floor(Math.random() * dlnews.responseJSON.length);
+        console.log(dlnews)
+        for (let i = 1; i < 4; i++) {
+            let temp = Math.floor(Math.random() * dlnews.responseJSON.length);
+            for (let j = 0; j < i; j++) {
+                if (news[j] != temp) {
+                    news[i] = temp;
+                }
+                else {
+                    i--;
+                    break;
+                }
+            }
+        }
+        console.log(news)
+        for (let i = 0; i < 4; i++) {
+            $(".news>.row").append(`
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 news-item nav-${dlnews.responseJSON[news[i]].type}">
+                    <div class="card__header d-flex nav-item">
+                        <img src="../images/pokeball.png" alt="" class="icon-new">
+                        <span>${dlnews.responseJSON[news[i]].type.toUpperCase()}</span>
+                    </div>
+                    <img src="${dlnews.responseJSON[news[i]].image}" alt="">
+                    <div class="card__mid nav-item"></div>
+                    <div class="card__bot">
+                        <p>${dlnews.responseJSON[news[i]].content}</p>
+                        <span>${dlnews.responseJSON[news[i]].date}</span>
+                    </div>
+                </div>`)
+        }
+    })  
 })

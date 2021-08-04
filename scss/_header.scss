@@ -1,6 +1,9 @@
 /* HEADER */
 header {
     background-color: $black;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
 }
 
 a{
@@ -94,7 +97,7 @@ a{
     font-size: 30px;
     cursor: pointer;
     color: $white;
-    right: 10%;
+    left: 10%;
 }
 
 .overlay {
@@ -150,6 +153,7 @@ $i: 1;
 /* SLIDE */
 .slide-show {
     background-color: $grey;
+    padding-top: 96px;
     .carousel {
         img {
             height: 650px;
