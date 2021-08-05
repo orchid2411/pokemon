@@ -409,4 +409,75 @@ main {
   bottom: 10px;
 }
 
+footer {
+  background-image: url("../images/background-footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer img {
+  width: 100%;
+}
+footer .footer-container {
+  text-align: center;
+}
+footer .footer-container h4 {
+  font-size: 22px;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+footer .footer-container a {
+  text-decoration: none;
+  padding-bottom: 5px;
+  color: #BCC1BB;
+  font-size: 16px;
+}
+footer .footer-container a:hover {
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1.5);
+}
+footer .footer-container a p {
+  display: none;
+  position: absolute;
+  right: -180%;
+  font-weight: 500;
+}
+footer .footer-container .icon-ft {
+  position: relative;
+}
+footer .footer-container .icon-ft:hover {
+  width: 300px;
+}
+footer .footer-container .icon-ft:hover p {
+  display: block;
+}
+footer .footer-container .icon-ft .icon-home {
+  color: #03a9f4;
+}
+footer .footer-container .icon-ft .icon-data {
+  color: #ffaa00;
+}
+footer .footer-container .icon-ft .icon-movie {
+  color: #7fe5f0;
+}
+footer .footer-container .icon-ft .icon-game {
+  color: #ff668f;
+}
+footer .footer-container .icon-ft .icon-shop {
+  color: #4caf50;
+}
+footer .footer-container .icon-ft .icon-news {
+  color: #ED3B15;
+}
+footer .bot-ft {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  color: #BCC1BB;
+  font-size: 20px;
+}
+footer .bot-ft span {
+  color: #03a9f4;
+}
+
 /*# sourceMappingURL=index.css.map */

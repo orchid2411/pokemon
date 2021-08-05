@@ -145,7 +145,7 @@ $(document).ready(() => {
         })
 
     /* Pokemovie */
-    const dlmovie = $.getJSON("../js/movie.json", function () {
+    const dlmovie = $.getJSON("../data/movie.json", function () {
         const mv = [];
         mv[0] = Math.floor(Math.random() * dlmovie.responseJSON.length);
         for (let i = 1; i < 7; i++) {
@@ -214,7 +214,7 @@ $(document).ready(() => {
     }
     
     /* PokeShop */
-    const dlshop = $.getJSON("../js/products.json", function () {
+    const dlshop = $.getJSON("../data/products.json", function () {
         const prduct = [];
         prduct[0] = Math.floor(Math.random() * dlshop.responseJSON.length);
         console.log(dlshop)
@@ -243,7 +243,7 @@ $(document).ready(() => {
     })  
 
     /* PokeNews */
-    const dlnews = $.getJSON("../js/news.json", function () {
+    const dlnews = $.getJSON("../data/news.json", function () {
         const news = [];
         news[0] = Math.floor(Math.random() * dlnews.responseJSON.length);
         console.log(dlnews)
