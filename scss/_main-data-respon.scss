@@ -1,0 +1,238 @@
+
+h2 {
+    @include responsive(xl) {
+        padding: 25px 15px;
+    }
+    @include responsive(lg) {
+        padding: 15px 15px;
+    }
+    @include responsive(md) {
+        padding: 10px 15px;
+    }
+    @include responsive(sm) {
+        padding: 10px 15px;
+    }
+    @include responsive(xs) {
+        padding: 5px 15px;
+    }
+}
+
+/* POKEDEX */
+.pkdex {
+    .search-btn {
+        @include responsive(lg) {
+            margin-top: 20px;
+            width: 40%;
+            height: 35px;
+        }
+        @include responsive(md) {
+            margin-top: 20px;
+            width: 50%;
+            height: 30px;
+        }
+        @include responsive(sm) {
+            margin-top: 15px;
+            width: 50%;
+            height: 30px;
+        }
+        @include responsive(xs) {
+            margin-top: 10px;
+            width: 70%;
+            height: 30px;
+        }
+    }
+
+    .tab-gen{
+        @include responsive(lg) {
+            margin-right: 10px;
+            width: 11%;
+        }
+        @include responsive(md) {
+            margin-right: 10px;
+            width: 15%;
+        }
+        @include responsive(sm) {
+            margin-right: 10px;
+            width: 16%;
+        }
+        @include responsive(xs) {
+            margin-right: 0px;
+            margin-left: 10px;
+            width: 25%;
+            float: right;
+            position: relative;
+            top: 5px;
+            left: -10px;
+        }
+    }
+
+    .tab-type{
+        button {
+            @include responsive(xl) {
+                width: 7%;
+                margin: 2px 0px;
+            }
+            @include responsive(lg) {
+                width: 9%;
+                margin: 2px 0px;
+            }
+            @include responsive(md) {
+                width: 10%;
+                margin: 0px 0px;
+            }
+            @include responsive(sm) {
+                margin: 0px 0px;
+                font-size: 10px;
+            }
+            @include responsive(xs) {
+                margin-left: 10px;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.card-pkm {
+    .card-item-data {
+        @include responsive(xl) {
+            top: 10%;
+        }
+        @include responsive(lg) {
+            top: 11%;
+        }
+        @include responsive(md) {
+            top: 13%;
+        }
+        @include responsive(xs) {
+            top: 13%;
+        }
+    
+        img {
+            @include responsive(xl) {
+                margin-left: 35px;
+            }
+            @include responsive(lg) {
+                width: 55%;
+                margin-left: 30px;
+            }
+            @include responsive(md) {
+                width: 50%;
+                margin-left: 50px;
+            }
+            @include responsive(sm) {
+                width: 60%;
+                margin-left: 30px;
+            }
+            @include responsive(xs) {
+                width: 60%;
+                margin-left: 38px;
+            }
+            @media screen and (min-width: 400px) and (max-width: 440px) {
+                margin-left: 35px;
+            }
+            @media screen and (min-width: 380px) and (max-width: 400px) {
+                margin-left: 32px;
+            }
+            @media screen and (min-width: 360px) and (max-width: 380px) {
+                margin-left: 30px;
+            }
+            @media screen and (min-width: 340px) and (max-width: 360px) {
+                margin-left: 28px;
+            }
+            @media screen and (min-width: 320px) and (max-width: 340px) {
+                margin-left: 25px;
+            }
+        }
+    
+        .card-body {
+            @include responsive(xl) {
+                line-height: 1.5;
+                font-size: 13px;
+                padding-top: 20px;
+                padding-left: 7px;
+            }
+            @include responsive(lg) {
+                line-height: 1.5;
+                padding-top: 30px;
+                padding-left: 7px;
+                font-size: 13px;
+            }
+            @include responsive(md) {
+                line-height: 1.6;
+                padding-top: 35px;
+                padding-left: 7px;
+                font-size: 15px;
+            }
+            @include responsive(sm) {
+                line-height: 1.3;
+                padding-top: 35px;
+                padding-left: 10px;
+                font-size: 13px;
+            }
+            @include responsive(xs) {
+                line-height: 1.3;
+                padding-top: 20px;
+                padding-left: 7px;
+                font-size: 16px;
+            }
+            @media screen and (min-width: 400px) and (max-width: 440px) {
+                font-size: 14px;
+            }
+            @media screen and (min-width: 380px) and (max-width: 400px) {
+                font-size: 13px;
+            }
+            @media screen and (min-width: 360px) and (max-width: 380px) {
+                font-size: 12px;
+            }
+            @media screen and (min-width: 340px) and (max-width: 360px) {
+                font-size: 11px;
+            }
+            @media screen and (min-width: 320px) and (max-width: 340px) {
+                font-size: 10px;
+            }
+            
+            .btn {
+                @include responsive (md) {
+                    width: 75px;
+                    font-size: 15px;
+                    padding: 2px;
+                }
+                @include responsive (sm) {
+                    width: 70px;
+                    font-size: 13px;
+                    padding: 2px;
+                }
+                @include responsive (xs) {
+                    width: 75px;
+                    font-size: 16px;
+                    padding: 2px;
+                }
+                @media screen and (min-width: 400px) and (max-width: 440px) {
+                    width: 70px;
+                    font-size: 14px;
+                    padding: 2px;
+                }
+                @media screen and (min-width: 380px) and (max-width: 400px) {
+                    width: 65px;
+                    font-size: 13px;
+                    padding: 2px;
+                }
+                @media screen and (min-width: 360px) and (max-width: 380px) {
+                    width: 60px;
+                    font-size: 12px;
+                    padding: 2px;
+                }
+                @media screen and (min-width: 340px) and (max-width: 360px) {
+                    width: 55px;
+                    font-size: 11px;
+                    padding: 2px;
+                }
+                @media screen and (min-width: 320px) and (max-width: 340px) {
+                    width: 50px;
+                    font-size: 10px;
+                    padding: 1px;
+                }
+            }
+        }
+    }
+}

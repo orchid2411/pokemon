@@ -1,0 +1,197 @@
+
+h2 {
+    color: $data;
+    padding: 30px 100px;
+}
+
+/* POKEDEX */
+.pkdex {
+    padding-bottom: 180px;
+
+    .search-btn {
+        // margin-bottom: 20px;
+        margin-top: 30px;
+        width: 35%;
+        height: 40px;
+
+        button {
+            font-size: 16px;
+        }
+    }
+
+    .tab-gen{
+        position: sticky;
+        top: 100px;
+        float: left;
+        width: 9%;
+        margin-right: 50px;
+
+        a {
+            color: $white;
+        }
+        
+        button {
+            display: block;
+            background-color: $black;
+            color: $white;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+            border-radius: 50px;
+    
+            &:hover {
+                background-color: $home;
+                transform: scale(1.1);
+            }
+    
+            &.active-dex {
+                background-color: $water;
+            }
+        }
+    }
+
+    .tab-type{
+        button {
+            box-shadow: none;
+            margin: 5px 2px;
+            &:hover {
+                transform: scale(1.5);
+                color: $white;
+            }
+        }
+    }
+    
+    .tabcontent {
+        // padding: 0px 0px 0px 120px;
+        border: none;
+        display: none;
+    }
+}
+
+.card-pkm {
+    position: relative;
+    padding-top: 10px;
+
+    .card-item-data {
+        position: absolute;
+        top: 8%;
+    
+        img {
+            width: 60%;
+            margin-left: 50px;
+        }
+    
+        .card-body {
+            padding-top: 45px;
+            color: $white;
+            font-size: 16px;
+            line-height: 1.6;
+
+            span {
+                p{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ATTACK DEX */
+.accordion {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    color: $white;
+    overflow: hidden;
+
+    .table-move {
+        text-align: center;
+        width: 100%;
+
+        th {
+            background-color: $shop;
+            border: black 10px solid;
+        }
+
+        td {
+            background-color: $flying;
+            border: black 10px solid;
+        }
+    }
+}
+
+/* MORE BUTTON */
+#more-1, #more-2 {
+    display: none;
+}
+
+#more-btn {
+    display: block;
+    border-radius: 30px;
+    width: 150px;
+    background-color: rgba($color: $black, $alpha: 0.1);
+    color: $white;
+    padding: 8px;
+    font-size: 20px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 20px;
+
+    &:hover span {
+        padding-right: 20px;
+    }
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+
+        &:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: -70px;
+            right: 70px;
+            transition: 0.3s;
+            font-size: 35px;
+        }
+    }
+
+    &:hover span:after {
+        opacity: 1;
+        right: 70px;
+    }
+
+    .down_arrow{
+        transform:rotate(90deg);
+        display: block;
+    }
+}
+
+.not-found {
+    text-align: center;
+    color: $fire;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,187 @@
+/* MAIN */
+main {
+    background-color: $black;
+}
+
+/* Title and logo */
+.title-logo {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    img {
+        width: 8%;
+    }
+    h2 {
+        padding-top: 20px;
+        padding-left: 10px;
+        font-size: 40px;
+    }
+}
+
+/* Pokedex */
+.back-card {
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.card-item {
+    position: absolute;
+    top: 8%;
+    opacity: .5;
+
+    img {
+        width: 30%;
+        margin-left: 40px;
+    }
+
+    .card-body {
+        color: $white;
+        font-size: 16px;
+        line-height: 1.8;
+
+        .one-item {    
+            margin-left: 65px;
+        }
+        
+        .two-item {
+            margin-left: 16px;
+        }
+    }
+}
+
+.slick-center {
+    .card-item{
+        opacity: 1;
+
+        img {
+        transform: scale(1.5);
+        transition: 1s;
+        }
+    }
+}
+/* Button */
+.btn {
+    width: 80px;
+    padding: 5px;
+    border: none;
+    color: $white;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Color type */
+$i: 1;
+@each $type in $name-types {
+    .btn-#{$type} {
+            background-color: nth($types, $i);
+    }
+    $i: $i + 1;
+}
+
+/* Pokemovie */
+.movie {
+    color: $white;
+    img {
+        width: 70%;
+        margin: auto;
+    }
+
+    p {
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+
+        &:last-child {
+            font-size: 14px;
+        }
+    }
+}
+
+/* Pokegame */
+.game {
+    img {
+        width: 100%;
+    }
+
+    p {
+        color: $white;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* Pokeshop */
+.shop {
+    @extend .game;
+    img {
+        border-radius: 30px;
+    }
+
+    .img-hid-1 {
+        display: none;
+    }
+
+    .img-pos:hover .img-hid-1 {
+        display: block;
+    }
+
+    .img-pos:hover .img-hid-2 {
+        display: none;
+    }  
+}
+
+/* PokeNews */
+.news-item {
+    position: relative;
+    margin-bottom: 50px;
+    height: 100%;
+
+    .card__header {
+        padding: 3px 10px;
+        border-radius: 10px 10px 0px 0px;
+
+        .icon-new {
+            width: 15%;
+        }
+
+        span {
+            padding-left: 5px;
+            color: $white;
+            font-weight: 600;
+            padding-top: 8px;
+            font-size: 18px;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .card__mid {
+        width: 100%;
+        height: 5px;
+    }
+
+    .card__bot {
+        // position: relative;
+        background-color: $white;
+        border-radius: 0px 0px 10px 10px;
+        padding: 5px;
+        font-size: 14px;
+        height: 130px;
+
+        p {
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        span {
+            position: absolute;
+            font-weight: 700;
+            right: 10%;
+            bottom: 10px;
+        }
+    }
+}

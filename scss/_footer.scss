@@ -1,0 +1,66 @@
+footer {
+    background-image: url('../images/background-footer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img {
+        width: 100%;
+    }
+
+    .footer-container{
+        text-align: center;
+        h4 {
+            font-size: 22px;
+            font-weight: 800;
+            padding-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            padding-bottom: 5px;
+            color: $grey;
+            font-size: 16px;
+            &:hover {
+                color: $white;
+                cursor: pointer;
+                transform: scale(1.5);
+            }
+
+            p {
+                display: none;
+                position: absolute;
+                right:-180%;
+                font-weight: 500;
+            }
+        }
+
+        .icon-ft {
+            position: relative;
+            &:hover {
+                width: 300px;
+                p {
+                    display: block;
+                }
+            }
+            $i: 1;
+            @each $name in $name-pages {
+                .icon-#{$name} {
+                    color: nth($pages, $i);
+                }
+                $i: $i + 1;
+            }
+        }
+    }
+
+    .bot-ft {
+        background-color: $black;
+        padding: 20px;
+        text-align: center;
+        color: $grey;
+        font-size: 20px;
+
+        span {
+            color: $home;
+        }
+    }
+}

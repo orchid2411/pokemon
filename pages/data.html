@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/slick-theme.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index-responsive.css">
+</head>
+
+<body onload="BackTopPage()">
+    <div id="top">
+
+        <!-- MOVE TOP -->
+        <div class="move-top">
+            <a href="#top">
+                <img src="../images/move-top.png" alt="">
+            </a>
+        </div>
+
+        <!-- HEADER -->
+        <header>
+            <div>
+                <div class="d-flex">
+                    <div class="div-logo">
+                        <a href="index.html">
+                            <img src="../images/logo.png" class="logo">
+                        </a>
+                    </div>
+                    <a href="javascript:void(0);" id="btn-menu" onclick="myFunction()">
+                        <button class="btn-menu-tab">MENU</button>
+                    </a>
+                    <div class="nav-menu-content" id="menu">
+                        <ul class="d-flex nav-menu">
+                            <li class="d-inline-flex nav-home">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeHome</a>
+                            </li>
+                            <li class="d-inline-flex nav-data">
+                                <div class="nav-item">
+                                </div>
+                                <a href="data.html">PokeData</a>
+                            </li>
+                            <li class="d-inline-flex nav-movie">
+                                <div class="nav-item">
+                                </div>
+                                <a href="movie.html">PokeMovie</a>
+                            </li>
+                            <li class="d-inline-flex nav-game">
+                                <div class="nav-item">
+                                </div>
+                                <a href="game.html">PokeGame</a>
+                            </li>
+                            <li class="d-inline-flex nav-shop">
+                                <div class="nav-item">
+                                </div>
+                                <a href="shop.html">PokeShop</a>
+                            </li>
+                            <li class="d-inline-flex nav-news">
+                                <div class="nav-item">
+                                </div>
+                                <a href="news.html">PokeNews</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <span id="navi-mobile" onclick="openNav()">&#9776;</span>
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <div class="nav-home">
+                                <a href="index.html">PokeHome</a>
+                            </div>
+                            <div class="nav-data">
+                                <a href="data.html">PokeData</a>
+                            </div>
+                            <div class="nav-movie">
+                                <a href="movie.html">PokeMovie</a>
+                            </div>
+                            <div class="nav-game">
+                                <a href="game.html">PokeGame</a>
+                            </div>
+                            <div class="nav-shop">
+                                <a href="shop.html">PokeShop</a>
+                            </div>
+                            <div class="nav-news">
+                                <a href="news.html">PokeNews</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <h2>POKEDEX</h2>
+            <!-- Pokedex -->
+            <div class="container pkdex">
+                <div class="d-flex justify-content-around">
+                    <h2 id="top">POKEDEX</h2>
+
+                    <form class="d-flex search-btn">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit" onclick="opengen(event, 'SEARCH')" id="block-btn">Search</button>
+                    </form>
+                </div>
+
+                <div class="tab-gen">
+                    <button class="tablinks active-dex active-dex" onclick="opengen(event, 'ALL')" 
+                        id="defaultOpen"><a href="#top">ALL</a></button>
+                </div>
+
+                <div class="tab-type">
+                </div>
+
+                <div id="ALL" class="tabcontent">
+                    <div class="container">
+                        <div class="row">
+                        </div>
+                        <button onclick="moreFunc('ALL')" id="more-btn">More <span class="down_arrow"></span></button>
+                    </div>
+                </div>
+
+                <div id="GRASS" class="tabcontent">
+                    <div class="container">
+                        <div class="row">
+                        </div>
+                        <button onclick="moreFunc('GRASS')" id="more-btn">More <span class="down_arrow"></span></button>
+                    </div>
+                </div>
+
+                <div id="SEARCH" class="tabcontent">
+                    <div class="container">
+                        <div class="row">
+                        </div>
+                        <button onclick="moreFunc('SEARCH')" id="more-btn">More <span class="down_arrow"></span></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <img src="../images/footer.png" alt="">
+            <div class="container footer-container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-5 d-flex flex-column">
+                        <h4>Categories</h4>
+                        <a href="" >PokeData</a>
+                        <a href="">PokeMovie</a>
+                        <a href="">PokeGame</a>
+                        <a href="">PokeShop</a>
+                        <a href="">PokeNews</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-5 d-flex flex-column">
+                        <h4>Contact Us</h4>
+                        <a href="mailto:orchid114111@gmail.com">Email: orchid114111@gmail.com</a>
+                        <a href="tel:0368216335">Phone: 0368216335</a>
+                        <a href="https://github.com/orchid2411" target="_blank">Github</a>
+                        <a href="">Linked: mcuong</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-5 d-flex flex-column">
+                        <h4>Connect With Social</h4>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-home">
+                                <i class="fas fa-circle fa-stack-2x "></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                <p>facebook</p>
+                            </span>
+                        </a>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-data">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                <p>twitter</p>
+                            </span>
+                        </a>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-movie">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-dribbble fa-stack-1x fa-inverse"></i>
+                                <p>dribbble</p>
+                            </span>
+                        </a>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-game">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-google-plus-g fa-stack-1x fa-inverse"></i>
+                                <p>google+</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bot-ft">
+                <p>© 2021 Pokemon. All rights reserved | Design by <span>M.Cuong</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/main-data.js"></script>
+    <script src="../js/tab.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>

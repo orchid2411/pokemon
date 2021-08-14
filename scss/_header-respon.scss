@@ -1,0 +1,137 @@
+/* HEADER */
+.div-logo {
+    @include responsive(md) {
+        margin-left: 70px;
+    }
+    @include responsive(sm) {
+        margin-left: 0px;
+    }
+    @include responsive(xs) {
+        margin-left: 100px;
+    }
+    .logo {
+        @include responsive(lg) {
+            margin: 8px;
+            width: 80%;
+        }
+        @include responsive(md) {
+            margin: 8px;
+            width: 60%;
+        }
+        @include responsive(sm) {
+            margin: 10px;
+            margin-left: 70px;
+            width: 40%;
+        }
+        @include responsive(xs) {
+            margin: 8px;
+            margin-left: 50px;
+            width: 40%;
+        }
+    }
+}
+
+#btn-menu {
+    @include responsive(md) {
+        display: block;
+    }
+    @include responsive(sm) {
+        display: block;
+    }
+    .btn-menu-tab {
+        @include responsive(sm) {
+            margin-top: 15px;
+            width: 90px;
+            height: 25px;
+        }
+    }
+}
+
+#menu {
+    @include responsive(md) {
+        display: none;
+    }
+    @include responsive(sm) {
+        display: none;
+    }
+    @include responsive(xs) {
+        display: none;
+    }
+}
+
+#navi-mobile {
+    @include responsive(xs) {
+        display: block;
+    }
+}
+
+.nav-menu-content {
+    @include responsive(md) {
+        margin-top: 60px;
+        margin-bottom: 10px;
+    }
+    @include responsive(sm) {
+        margin-top: 60px;
+        margin-bottom: 10px;
+    }
+    .nav-menu {
+        @include responsive(md) {
+            flex-direction: column;
+        }
+        @include responsive(sm) {
+            flex-direction: column;
+        }
+        li {
+            @include responsive(xl) {
+                padding: 5px 10px;
+            }
+            @include responsive(lg) {
+                padding: 5px 5px;
+            }
+            a {
+                @include responsive(lg) {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+/* SLIDE */
+.slide-show {
+    .carousel {
+        img {
+            @include responsive(xl) {
+                height: 500px;
+            }
+            @include responsive(lg) {
+                height: 400px;
+            }
+            @include responsive(md) {
+                height: 350px;
+            }
+            @include responsive(sm) {
+                height: 300px;
+            }
+            @include responsive(xs) {
+                height: 200px;
+            }
+        }
+    }
+}
+
+/* SLIDE */
+.slide-show {
+    @include responsive(lg) {
+        padding-top: 82px;
+    }
+    @include responsive(md) {
+        padding-top: 66px;
+    }
+    @include responsive(sm) {
+        padding-top: 64px;
+    }
+    @include responsive(xs) {
+        padding-top: 49px;
+    }
+}
