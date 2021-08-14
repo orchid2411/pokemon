@@ -404,7 +404,6 @@ $(document).ready(() => {
         if (strSearch === '') {
             $('#SEARCH>.container>.row').empty();
             more_btn.style.display = "block";
-            // blockBtn.disabled = true;
             RenderPKM(1, 899, "SEARCH")
         }
         else {
@@ -430,8 +429,8 @@ $(document).ready(() => {
                         }
                         if ((data.name.search(strSearch) != -1) || (tamid.search(strSearch) != -1)) {
                             kt++;
-                            k = ktIDMore(kt, 8);
-                            if (kt > 8) {
+                            k = ktIDMore(kt, 12);
+                            if (kt > 12) {
                                 more_btn.style.display = "block";
                             }
                             if (data.types.length === 1) {
