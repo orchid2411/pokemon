@@ -216,6 +216,7 @@ main {
   position: absolute;
   top: 8%;
   opacity: 0.5;
+  display: none;
 }
 .card-item img {
   width: 30%;
@@ -231,10 +232,6 @@ main {
 }
 .card-item .card-body .two-item {
   margin-left: 16px;
-}
-
-.center {
-  display: none;
 }
 
 .slick-center .card-item {

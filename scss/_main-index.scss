@@ -28,6 +28,7 @@ main {
     position: absolute;
     top: 8%;
     opacity: .5;
+    display: none;
 
     img {
         width: 30%;
@@ -47,9 +48,6 @@ main {
             margin-left: 16px;
         }
     }
-}
-.center {
-    display: none;
 }
 
 .slick-center {
