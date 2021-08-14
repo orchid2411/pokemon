@@ -395,7 +395,8 @@ $(document).ready(() => {
         e.preventDefault();
         let kt = 0;
         
-        const strSearch = $('form input').val();
+        let strSearch = $('form input').val();
+        strSearch = strSearch.toLowerCase();
         $('form input').val('');
         const blockBtn = document.getElementById('block-btn')
         let more_btn = document.querySelector('#SEARCH').querySelector('#more-btn');
