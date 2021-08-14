@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+    let index_pkdex = document.getElementsByClassName('center');
     /* Pokedex */
     const end_point_pkm = 'https://pokeapi.co/api/v2/pokemon/';
     fetch(end_point_pkm)
@@ -35,6 +36,7 @@ $(document).ready(() => {
                             tamid = `0${data.id}`
                         }
                         if (tempdem === 9) {
+                            index_pkdex[0].style.display = "block";
                             $('.center')
                             .not('.slick-initialized')
                             .slick({
@@ -204,7 +206,6 @@ $(document).ready(() => {
         fetch(end_point_game.concat(`${game[i]}`))
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data)
                 $(".game>.row").append(`
                     <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                         <img src="https://img.pokemondb.net/boxes/${data.name}.jpg" alt="">
@@ -217,7 +218,6 @@ $(document).ready(() => {
     const dlshop = $.getJSON("../data/products.json", function () {
         const prduct = [];
         prduct[0] = Math.floor(Math.random() * dlshop.responseJSON.length);
-        console.log(dlshop)
         for (let i = 1; i < 4; i++) {
             let temp = Math.floor(Math.random() * dlshop.responseJSON.length);
             for (let j = 0; j < i; j++) {
@@ -246,7 +246,6 @@ $(document).ready(() => {
     const dlnews = $.getJSON("../data/news.json", function () {
         const news = [];
         news[0] = Math.floor(Math.random() * dlnews.responseJSON.length);
-        console.log(dlnews)
         for (let i = 1; i < 4; i++) {
             let temp = Math.floor(Math.random() * dlnews.responseJSON.length);
             for (let j = 0; j < i; j++) {
@@ -259,7 +258,6 @@ $(document).ready(() => {
                 }
             }
         }
-        console.log(news)
         for (let i = 0; i < 4; i++) {
             $(".news>.row").append(`
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 news-item nav-${dlnews.responseJSON[news[i]].type}">

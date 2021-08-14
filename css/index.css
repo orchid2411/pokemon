@@ -233,6 +233,10 @@ main {
   margin-left: 16px;
 }
 
+.center {
+  display: none;
+}
+
 .slick-center .card-item {
   opacity: 1;
 }
