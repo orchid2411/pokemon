@@ -4,7 +4,7 @@ $(document).ready(() => {
     const end_point_pkm = 'https://pokeapi.co/api/v2/pokemon/';
     fetch(end_point_pkm)
         .then((resp) => resp.json())
-        .then((data) => {
+        .then(async (data) => {
             const result_pkm = data.count-220;
             const pkm = [];
             pkm[0] = Math.floor(Math.random() * result_pkm)+1;
@@ -23,7 +23,7 @@ $(document).ready(() => {
 
             let tempdem = 0;
             for (let k = 0; k < 9; k++) {
-                fetch(end_point_pkm.concat(`${pkm[k]}`))
+                await fetch(end_point_pkm.concat(`${pkm[k]}`))
                     .then((resp) => resp.json())
                     .then((data) => {
                         tempdem++;
@@ -69,7 +69,7 @@ $(document).ready(() => {
                                     $('.center').append(`
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                        <div class="card-item-data">
+                                        <div class="card-item">
                                             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
@@ -86,7 +86,7 @@ $(document).ready(() => {
                                     $('.center').append(`
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                        <div class="card-item-data">
+                                        <div class="card-item">
                                             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
@@ -106,7 +106,7 @@ $(document).ready(() => {
                                     $('.center').append(`
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                        <div class="card-item-data">
+                                        <div class="card-item">
                                             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
@@ -124,7 +124,7 @@ $(document).ready(() => {
                                     $('.center').append(`
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                        <div class="card-item-data">
+                                        <div class="card-item">
                                             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
