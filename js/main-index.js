@@ -1,11 +1,10 @@
 $(document).ready(() => {
 
-    let index_pkdex = document.getElementsByClassName('center');
     /* Pokedex */
     const end_point_pkm = 'https://pokeapi.co/api/v2/pokemon/';
     fetch(end_point_pkm)
         .then((resp) => resp.json())
-        .then(async (data) => {
+        .then((data) => {
             const result_pkm = data.count-220;
             const pkm = [];
             pkm[0] = Math.floor(Math.random() * result_pkm)+1;
@@ -24,7 +23,7 @@ $(document).ready(() => {
 
             let tempdem = 0;
             for (let k = 0; k < 9; k++) {
-                await fetch(end_point_pkm.concat(`${pkm[k]}`))
+                fetch(end_point_pkm.concat(`${pkm[k]}`))
                     .then((resp) => resp.json())
                     .then((data) => {
                         tempdem++;
@@ -36,7 +35,10 @@ $(document).ready(() => {
                             tamid = `0${data.id}`
                         }
                         if (tempdem === 9) {
-                            index_pkdex[0].style.display = "block";
+                            let index_pkdex = document.querySelectorAll('.card-item');
+                            for (let i = 0; i < index_pkdex.length; i++) {
+                                index_pkdex[i].style.display = "block";
+                            }
                             $('.center')
                             .not('.slick-initialized')
                             .slick({
