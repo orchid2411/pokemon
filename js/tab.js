@@ -50,23 +50,17 @@ function moreFunc(gen) {
     let more1 = document.querySelector(`#${gen}`).querySelectorAll('#more-2');
     let more_btn = document.querySelector(`#${gen}`).querySelector('#more-btn');
 
-    // console.log(more.length)
-    // console.log(more1.length)
-    // console.log(more_btn)
-
     for (let i = 0; i < more.length; i++) {
         more[i].setAttribute("id", "more-0");
         if (more1.length === 0) {
             more_btn.style.display = "none";
         }
-        if (more1.length >= 8) {
+        if (more1.length >= 12) {
             more1[i].setAttribute("id", "more-1");
         }
-        if (more1.length < 8) 
+        if (more1.length < 12) 
             for (let j = 0; j < more1.length; j++)
                 more1[j].setAttribute("id", "more-1");
     }
-    
-    // console.log(more1[1])
 } 
 

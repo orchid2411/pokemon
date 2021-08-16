@@ -11,6 +11,13 @@ $(document).ready(() => {
             await fetch(end_point_pkm.concat(`${i}`))
                 .then((resp) => resp.json())
                 .then((data) => {
+                    let blockBtn = document.getElementById('block-btn')
+                    if (i < end - 1) {
+                        blockBtn.disabled = true;
+                    }
+                    else {
+                        blockBtn.disabled = false;
+                    }
                     k = ktIDMore(i, start + 11);
                     let tamid = data.id;
                     if (data.id < 10) {
@@ -172,10 +179,10 @@ $(document).ready(() => {
     /* button type */
     fetch(end_point_type)
         .then((resp) => resp.json())
-        .then(async (data) => {
+        .then((data) => {
             const result_type = data.count - 1;
             for (let i = 1; i < result_type; i++) {
-                await fetch(end_point_type.concat(`${i}`))
+                fetch(end_point_type.concat(`${i}`))
                     .then((resp) => resp.json())
                     .then((data) => {
                         $('.tab-type').append(`
@@ -268,7 +275,7 @@ $(document).ready(() => {
                         }
                         if (data.types.length === 1) {
                             count = countType(data.types[0].type.name);
-                            k = ktIDMore(count, 8);
+                            k = ktIDMore(count, 12);
                             if (data.abilities.length === 1) {
                                 $(`#${data.types[0].type.name.toUpperCase()}>.container>.row`).append(`
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
@@ -398,7 +405,7 @@ $(document).ready(() => {
         let strSearch = $('form input').val();
         strSearch = strSearch.toLowerCase();
         $('form input').val('');
-        const blockBtn = document.getElementById('block-btn')
+        let blockBtn = document.getElementById('block-btn')
         let more_btn = document.querySelector('#SEARCH').querySelector('#more-btn');
         more_btn.style.display = "none";
                 
