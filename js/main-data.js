@@ -10,7 +10,7 @@ $(document).ready(() => {
         for (let i = start; i < end; i++) {
             await fetch(end_point_pkm.concat(`${i}`))
                 .then((resp) => resp.json())
-                .then((data) => {
+                .then((data) => { 
                     k = ktIDMore(i, start + 11);
                     let tamid = data.id;
                     if (data.id < 10) {
@@ -31,7 +31,7 @@ $(document).ready(() => {
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-center">
-                                                <a href="#" class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                         </div>
@@ -51,7 +51,7 @@ $(document).ready(() => {
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-center">
-                                                <a href="#" class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                         </div>
@@ -73,8 +73,8 @@ $(document).ready(() => {
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-around">
-                                                <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                         </div>
@@ -94,8 +94,8 @@ $(document).ready(() => {
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-around">
-                                                <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                         </div>
@@ -313,7 +313,7 @@ $(document).ready(() => {
                         else {
                             for (let n = 0; n < data.types.length; n++) {
                                 count = countType(data.types[n].type.name);
-                                k = ktIDMore(count, 8);
+                                k = ktIDMore(count, 12);
                                 if (data.abilities.length === 1) {
                                     $(`#${data.types[n].type.name.toUpperCase()}>.container>.row`).append(`
                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">

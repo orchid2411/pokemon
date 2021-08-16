@@ -79,7 +79,7 @@ $(document).ready(() => {
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                             </div>
@@ -96,7 +96,7 @@ $(document).ready(() => {
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                             </div>
@@ -116,8 +116,8 @@ $(document).ready(() => {
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                    <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                    <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                             </div>
@@ -134,8 +134,8 @@ $(document).ready(() => {
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                    <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                    <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                             </div>

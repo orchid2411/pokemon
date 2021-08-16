@@ -236,6 +236,10 @@ main {
 .card-item .card-body .two-item {
   margin-left: 16px;
 }
+.card-item .card-body a:hover {
+  color: #fff;
+  cursor: auto;
+}
 
 .slick-center .card-item {
   opacity: 1;
@@ -489,16 +493,16 @@ footer .bot-ft span {
 
 h2 {
   color: #ffaa00;
-  padding: 30px 100px;
 }
 
 /* POKEDEX */
 .pkdex {
   padding-bottom: 180px;
+  padding-top: 100px;
 }
 .pkdex .search-btn {
-  margin-top: 30px;
-  width: 35%;
+  margin: 30px 0;
+  width: 50%;
   height: 40px;
 }
 .pkdex .search-btn button {
@@ -567,6 +571,10 @@ h2 {
 }
 .card-pkm .card-item-data .card-body span p {
   text-align: center;
+}
+.card-pkm .card-item-data .card-body a:hover {
+  color: #fff;
+  cursor: auto;
 }
 
 /* ATTACK DEX */

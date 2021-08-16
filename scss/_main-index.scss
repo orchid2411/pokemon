@@ -47,6 +47,13 @@ main {
         .two-item {
             margin-left: 16px;
         }
+
+        a{
+            &:hover {
+                color: $white;
+                cursor: auto;
+            }
+        }
     }
 }
 
