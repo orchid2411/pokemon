@@ -11,13 +11,6 @@ $(document).ready(() => {
             await fetch(end_point_pkm.concat(`${i}`))
                 .then((resp) => resp.json())
                 .then((data) => {
-                    let blockBtn = document.getElementById('block-btn')
-                    if (i < end - 1) {
-                        blockBtn.disabled = true;
-                    }
-                    else {
-                        blockBtn.disabled = false;
-                    }
                     k = ktIDMore(i, start + 11);
                     let tamid = data.id;
                     if (data.id < 10) {
