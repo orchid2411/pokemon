@@ -1,12 +1,11 @@
 
 h2 {
     color: $data;
-    // padding: 30px 100px;
+    // padding: 100px 30px;
 }
 
 /* POKEDEX */
 .pkdex {
-    padding-bottom: 180px;
     padding-top: 100px;
 
     .search-btn {
@@ -54,21 +53,20 @@ h2 {
         }
     }
 
-    .tab-type{
-        button {
-            box-shadow: none;
-            margin: 5px 2px;
-            &:hover {
-                transform: scale(1.5);
-                color: $white;
-            }
-        }
-    }
-    
     .tabcontent {
-        // padding: 0px 0px 0px 120px;
         border: none;
         display: none;
+    }
+}
+
+.tab-type{
+    button {
+        box-shadow: none;
+        margin: 5px 2px;
+        &:hover {
+            transform: scale(1.5);
+            color: $white;
+        }
     }
 }
 
@@ -103,45 +101,6 @@ h2 {
                     cursor: auto;
                 }
             }
-        }
-    }
-}
-
-
-
-/* ATTACK DEX */
-.accordion {
-    background-color: $black;
-    color: $white;
-    cursor: pointer;
-    margin: 5px;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 20px;
-    transition: 0.4s;
-}
-
-.panel {
-    padding: 0 18px;
-    display: none;
-    color: $white;
-    overflow: hidden;
-
-    .table-move {
-        text-align: center;
-        width: 100%;
-
-        th {
-            background-color: $shop;
-            border: black 10px solid;
-        }
-
-        td {
-            background-color: $flying;
-            border: black 10px solid;
         }
     }
 }
@@ -201,4 +160,54 @@ h2 {
     font-size: 30px;
     font-weight: 700;
     font-family: 'Courier New', Courier, monospace;
+}
+
+/* ATTACK DEX */
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    color: $white;
+    overflow: hidden;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+    table {
+        caption-side: top;
+        caption {
+            text-align: center;
+            a {
+                font-size: 20px;
+                color: $black;
+            }
+
+            .btn {
+                width: 120px;
+            }
+        }
+    }
+    .table-move {
+        text-align: center;
+        width: 100%;
+
+        th {
+            width: 65%;
+            background-color: $shop;
+            border: black 5px solid;
+            padding: 5px;
+        }
+
+        td {
+            background-color: #585858;
+            border: black 5px solid;
+        }
+    }
+}
+
+#atk {
+    padding: 100px 0;
+
+    button {
+        box-shadow: none;
+    }
 }

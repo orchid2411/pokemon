@@ -139,7 +139,6 @@ $(document).ready(() => {
                 await fetch(end_point_gen.concat(`${i}`))
                     .then((resp) => resp.json())
                     .then((data) => {
-                        // console.log(data.main_region.name)
                         $('.tab-gen').append(`
                             <button class="tablinks" onclick="opengen(event, '${data.main_region.name.toUpperCase()}')"><a href="#top">${data.main_region.name.toUpperCase()}</a></button>
                         `)
@@ -166,6 +165,20 @@ $(document).ready(() => {
                             </div>
                         </div>
                         `)
+                        $('#atk').append(`
+                        <div class="panel" id="${data.name.toUpperCase()}-ATK">
+                            <table class="table-move">
+                                <caption> <a class="btn btn-${data.name}">${data.name.toUpperCase()}</a></caption>
+                                <tr>
+                                    <th>Move</th>
+                                    <th>Atk Type</th>
+                                    <th>Power</th>
+                                    <th>P.Point</th>
+                                    <th>Accuracy</th>
+                                </tr>
+                            </table>
+                        </div>
+                        `)
                     })
             }
         })
@@ -178,8 +191,11 @@ $(document).ready(() => {
                 fetch(end_point_type.concat(`${i}`))
                     .then((resp) => resp.json())
                     .then((data) => {
-                        $('.tab-type').append(`
+                        $('.pkdex>.tab-type').append(`
                             <button class="btn btn-${data.name}" onclick="opengen(event, '${data.name.toUpperCase()}')">${data.name.toUpperCase()}</button>
+                        `)
+                        $('#atk>.tab-type').append(`
+                            <button class="btn btn-${data.name} accordion" onclick="openatk('${data.name.toUpperCase()}-ATK')" id="${data.name.toUpperCase()}-ATK">${data.name.toUpperCase()}</button>
                         `)
                     })
             }
@@ -532,4 +548,48 @@ $(document).ready(() => {
             }
         }
     }
+
+    
+    
+    const end_point_moves = 'https://pokeapi.co/api/v2/move/';
+    const end_point_move ='https://pokeapi.co/api/v2/move/?offset=0&limit='
+    fetch(end_point_moves)
+        .then((resp) => resp.json())
+        .then(async(data) => {
+            
+            let resp = await fetch(end_point_move.concat(`${data.count}`));
+            let kq = await resp.json()
+
+            let move_name = [];
+            for (let i = 0; i < kq.results.length; i++) {
+                    move_name[i] = kq.results[i].name
+            }
+            move_name.sort();
+            console.log(move_name)
+            
+            for (let i = 0; i < move_name.length; i++) {
+
+                let resp1 = await fetch(end_point_moves.concat(`${move_name[i]}`))
+                let kqdetail = await resp1.json()
+
+                let power = kqdetail.power;
+                let accuracy = kqdetail.accuracy;
+                let atktype = '';
+
+                if (kqdetail.power == null) power = '--'
+                if (kqdetail.accuracy == null) accuracy = '--'
+                if (kqdetail.damage_class === null) atktype = '--' 
+                else atktype = kqdetail.damage_class.name;
+
+                $(`#${kqdetail.type.name.toUpperCase()}-ATK>.table-move`).append(`
+                <tr>
+                    <td style="text-align: left; padding-left: 5px">${kqdetail.name.replace('-',' ')}</td>
+                    <td>${atktype}</td>
+                    <td>${power}</td>
+                    <td>${kqdetail.pp}</td>
+                    <td>${accuracy}</td>
+                </tr>
+                `)
+            }
+        })
 })
