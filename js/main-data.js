@@ -548,48 +548,4 @@ $(document).ready(() => {
             }
         }
     }
-
-    
-    
-    const end_point_moves = 'https://pokeapi.co/api/v2/move/';
-    const end_point_move ='https://pokeapi.co/api/v2/move/?offset=0&limit='
-    fetch(end_point_moves)
-        .then((resp) => resp.json())
-        .then(async(data) => {
-            
-            let resp = await fetch(end_point_move.concat(`${data.count}`));
-            let kq = await resp.json()
-
-            let move_name = [];
-            for (let i = 0; i < kq.results.length; i++) {
-                    move_name[i] = kq.results[i].name
-            }
-            move_name.sort();
-            console.log(move_name)
-            
-            for (let i = 0; i < move_name.length; i++) {
-
-                let resp1 = await fetch(end_point_moves.concat(`${move_name[i]}`))
-                let kqdetail = await resp1.json()
-
-                let power = kqdetail.power;
-                let accuracy = kqdetail.accuracy;
-                let atktype = '';
-
-                if (kqdetail.power == null) power = '--'
-                if (kqdetail.accuracy == null) accuracy = '--'
-                if (kqdetail.damage_class === null) atktype = '--' 
-                else atktype = kqdetail.damage_class.name;
-
-                $(`#${kqdetail.type.name.toUpperCase()}-ATK>.table-move`).append(`
-                <tr>
-                    <td style="text-align: left; padding-left: 5px">${kqdetail.name.replace('-',' ')}</td>
-                    <td>${atktype}</td>
-                    <td>${power}</td>
-                    <td>${kqdetail.pp}</td>
-                    <td>${accuracy}</td>
-                </tr>
-                `)
-            }
-        })
 })
