@@ -47,8 +47,6 @@ function openatk(type) {
     atkType(tam);
 }
 
-$("#defaultOpen").click();
-
 const end_point_type = 'https://pokeapi.co/api/v2/type/';
 const end_point_moves = 'https://pokeapi.co/api/v2/move/';
 async function atkType(type) {
@@ -88,6 +86,9 @@ async function atkType(type) {
         `)
     }
 }
+
+$("#defaultOpen").click();
+
 
 function moreFunc(gen) {
     let more = document.querySelector(`#${gen}`).querySelectorAll('#more-1');
