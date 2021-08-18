@@ -1,5 +1,5 @@
 function opengen(evt, gen) {
-    let tabcontent = $('.tabcontent');
+    let tabcontent = $(`.tabcontent`);
     for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
@@ -30,16 +30,29 @@ function opengen(evt, gen) {
     }
 }
 
-const acc = $(".accordion");
-for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        const panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
+// const acc = $(".accordion");
+// console.log(acc)
+// for (let i = 0; i < acc.length; i++) {
+//     let panel = document.querySelectorAll('.panel')
+//     console.log(panel[0])
+//     panel[0].style.display = "block"
+//     acc[i].addEventListener("click", function () {
+//         console.log(this.id)
+        // for (let i =0; i < panel.length; i++) {
+        //     panel[i].style.display = "none"
+        // }
+//         let accordion = document.querySelectorAll(`#${this.id}`)
+//         accordion[accordion.length-1].style.display = "block";
+//     });
+// }
+function openatk(type) {
+    let panel = $(".panel")
+    for (let i = 0; i < panel.length; i++) {
+        panel[i].style.display = "none"
+    }
+    let type1 = $(`#${type}`)
+    let accordion = document.querySelectorAll(`#${type1[0].id}`)
+    accordion[accordion.length-1].style.display = "block";
 }
 
 $("#defaultOpen").click();
