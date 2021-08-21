@@ -165,15 +165,15 @@ h2 {
 /* ATTACK DEX */
 
 .panel {
-    padding: 0 18px;
+    padding: 0 250px;
     display: none;
     color: $white;
     overflow: hidden;
-    margin-left: 50%;
-    transform: translate(-50%);
+    margin: auto;
 
     table {
         caption-side: top;
+        margin: auto;
         caption {
             text-align: center;
             a {
@@ -205,9 +205,10 @@ h2 {
 }
 
 #atk {
-    padding: 100px 0;
+    padding: 100px 5px;
 
     button {
         box-shadow: none;
+        margin: 2px 1px;
     }
 }

@@ -69,18 +69,20 @@ async function atkType(type) {
         let power = kqdetail.power;
         let accuracy = kqdetail.accuracy;
         let atktype = '';
+        let pp = kqdetail.pp;
 
         if (kqdetail.power == null) power = '--'
         if (kqdetail.accuracy == null) accuracy = '--'
+        if (kqdetail.pp == null) pp = '--'
         if (kqdetail.damage_class === null) atktype = '--' 
         else atktype = kqdetail.damage_class.name;
 
         $(`#${type.toUpperCase()}-ATK>.table-move`).append(`
         <tr>
-            <td style="text-align: left; padding-left: 5px">${kqdetail.name.replace('-',' ')}</td>
+            <td style="text-align: left; padding-left: 5px">${kqdetail.name.replace(/-/g,' ')}</td>
             <td>${atktype}</td>
             <td>${power}</td>
-            <td>${kqdetail.pp}</td>
+            <td>${pp}</td>
             <td>${accuracy}</td>
         </tr>
         `)

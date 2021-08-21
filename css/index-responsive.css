@@ -827,4 +827,97 @@
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  #atk button {
+    width: 97px;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 440px) {
+  #atk button {
+    font-size: 14px;
+    width: 87px;
+  }
+}
+@media screen and (min-width: 380px) and (max-width: 400px) {
+  #atk button {
+    font-size: 13px;
+    width: 82px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 380px) {
+  #atk button {
+    font-size: 13px;
+    width: 77px;
+  }
+}
+@media screen and (min-width: 340px) and (max-width: 360px) {
+  #atk button {
+    font-size: 12px;
+    width: 72px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 340px) {
+  #atk button {
+    font-size: 12px;
+    width: 67px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .panel {
+    padding: 0 210px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 992px) {
+  .panel {
+    padding: 0 85px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .panel {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 576px) {
+  .panel {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .panel {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .panel .table-move {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 440px) {
+  .panel .table-move {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 380px) and (max-width: 400px) {
+  .panel .table-move {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 380px) {
+  .panel .table-move {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 340px) and (max-width: 360px) {
+  .panel .table-move {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 340px) {
+  .panel .table-move {
+    font-size: 12px;
+  }
+}
+
 /*# sourceMappingURL=index-responsive.css.map */
