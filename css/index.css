@@ -631,15 +631,15 @@ h2 {
 
 /* ATTACK DEX */
 .panel {
-  padding: 0 18px;
+  padding: 0 250px;
   display: none;
   color: #fff;
   overflow: hidden;
-  margin-left: 50%;
-  transform: translate(-50%);
+  margin: auto;
 }
 .panel table {
   caption-side: top;
+  margin: auto;
 }
 .panel table caption {
   text-align: center;
@@ -667,10 +667,11 @@ h2 {
 }
 
 #atk {
-  padding: 100px 0;
+  padding: 100px 5px;
 }
 #atk button {
   box-shadow: none;
+  margin: 2px 1px;
 }
 
 /*# sourceMappingURL=index.css.map */
