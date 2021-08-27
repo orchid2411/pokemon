@@ -56,6 +56,7 @@ h2 {
     .tabcontent {
         border: none;
         display: none;
+        padding-bottom: 180px;
     }
 }
 
@@ -81,6 +82,7 @@ h2 {
         img {
             width: 60%;
             margin-left: 50px;
+            cursor: pointer;
         }
     
         .card-body {
@@ -96,9 +98,9 @@ h2 {
             }
 
             a{
+                cursor: pointer;
                 &:hover {
                     color: $white;
-                    cursor: auto;
                 }
             }
         }
@@ -211,4 +213,101 @@ h2 {
         box-shadow: none;
         margin: 2px 1px;
     }
+}
+
+#detail {
+    .row > * {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    h3 {
+        margin-top: 100px;
+    }
+
+    .shiny-img {
+        margin-top: 150px;
+    }
+    
+    a{
+        &:hover {
+            color: $white;
+        }
+    }
+    
+    .tabs_div {
+        color: black;
+        .sui-tabs-item {
+            background-color: $grey;
+        }
+
+        h4 {
+            margin-top: 10px;
+        }
+
+        .title-type {
+            text-align: center;
+
+            a {
+                margin: 2px;
+            }
+        }
+
+        .evl {
+            .mega-evl {
+                transform: rotate(-15deg);
+            }
+            .giga-evl {
+                transform: rotate(15deg);
+            }
+        }
+
+        hr {
+            border-style: dotted;
+            width: 80%;
+            margin-left: 75px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        span {
+            font-weight: 600;
+        }
+    }
+    
+    .male {
+        color: $flying;
+    }
+    
+    .female {
+        color: $fire;
+    }
+    
+    .sui-tabs {
+        border: none;
+    }
+
+    .tabs_div_img {
+        margin-top: 20px;
+        button {
+            background-color: black;
+            color: white;
+            border: 1px solid;
+        }
+        .checked-form {
+            border-bottom: none;
+        }
+    }
+}
+
+$i: 1;
+@each $index in $name-index {
+    .stats-#{$index} {
+            background-color: nth($indexs, $i);
+            height: 10px;
+            margin-top: 5px;
+            width: $index*100%/180;
+            border-radius: 5px;
+    }
+    $i: $i + 1;
 }

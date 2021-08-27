@@ -26,12 +26,12 @@ $(document).ready(() => {
                                 <div class="card-pkm">
                                     <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                     <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                         <div class="card-body d-flex flex-column">
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-center">
-                                                <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                         </div>
@@ -46,12 +46,12 @@ $(document).ready(() => {
                                 <div class="card-pkm">
                                     <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                     <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                         <div class="card-body d-flex flex-column">
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-center">
-                                                <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                         </div>
@@ -68,13 +68,13 @@ $(document).ready(() => {
                                 <div class="card-pkm">
                                     <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                     <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                         <div class="card-body d-flex flex-column">
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-around">
-                                                <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                         </div>
@@ -89,13 +89,13 @@ $(document).ready(() => {
                                 <div class="card-pkm">
                                     <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                     <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                         <div class="card-body d-flex flex-column">
                                             <span>#${tamid}</span>
                                             <span>${data.name.toUpperCase()}</span>
                                             <div class="d-flex justify-content-around">
-                                                <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                <a class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
                                             </div>
                                             <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                         </div>
@@ -107,6 +107,7 @@ $(document).ready(() => {
                 })
         }
     }
+
 
     /* COUNTRY */
     const end_point_gen = 'https://pokeapi.co/api/v2/generation/';
@@ -291,12 +292,12 @@ $(document).ready(() => {
                                     <div class="card-pkm">
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                         <div class="card-item-data">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                             </div>
@@ -311,12 +312,12 @@ $(document).ready(() => {
                                     <div class="card-pkm">
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                         <div class="card-item-data">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                             </div>
@@ -336,13 +337,13 @@ $(document).ready(() => {
                                         <div class="card-pkm">
                                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                             <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                                 <div class="card-body d-flex flex-column">
                                                     <span>#${tamid}</span>
                                                     <span>${data.name.toUpperCase()}</span>
                                                     <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
                                                     </div>
                                                     <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                                 </div>
@@ -357,13 +358,13 @@ $(document).ready(() => {
                                         <div class="card-pkm">
                                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                             <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                                 <div class="card-body d-flex flex-column">
                                                     <span>#${tamid}</span>
                                                     <span>${data.name.toUpperCase()}</span>
                                                     <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
                                                     </div>
                                                     <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                                 </div>
@@ -457,12 +458,12 @@ $(document).ready(() => {
                                         <div class="card-pkm">
                                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                             <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                                 <div class="card-body d-flex flex-column">
                                                     <span>#${tamid}</span>
                                                     <span>${data.name.toUpperCase()}</span>
                                                     <div class="d-flex justify-content-center">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
                                                     </div>
                                                     <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                                 </div>
@@ -477,12 +478,12 @@ $(document).ready(() => {
                                         <div class="card-pkm">
                                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                             <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                                 <div class="card-body d-flex flex-column">
                                                     <span>#${tamid}</span>
                                                     <span>${data.name.toUpperCase()}</span>
                                                     <div class="d-flex justify-content-center">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
                                                     </div>
                                                     <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                                 </div>
@@ -499,13 +500,13 @@ $(document).ready(() => {
                                         <div class="card-pkm">
                                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                             <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                                 <div class="card-body d-flex flex-column">
                                                     <span>#${tamid}</span>
                                                     <span>${data.name.toUpperCase()}</span>
                                                     <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
                                                     </div>
                                                     <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                                 </div>
@@ -520,13 +521,13 @@ $(document).ready(() => {
                                         <div class="card-pkm">
                                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                             <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
                                                 <div class="card-body d-flex flex-column">
                                                     <span>#${tamid}</span>
                                                     <span>${data.name.toUpperCase()}</span>
                                                     <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
                                                     </div>
                                                     <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                                 </div>
