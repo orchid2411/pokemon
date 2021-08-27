@@ -540,6 +540,7 @@ h2 {
 .pkdex .tabcontent {
   border: none;
   display: none;
+  padding-bottom: 180px;
 }
 
 .tab-type button {
@@ -562,6 +563,7 @@ h2 {
 .card-pkm .card-item-data img {
   width: 60%;
   margin-left: 50px;
+  cursor: pointer;
 }
 .card-pkm .card-item-data .card-body {
   padding-top: 45px;
@@ -572,9 +574,11 @@ h2 {
 .card-pkm .card-item-data .card-body span p {
   text-align: center;
 }
+.card-pkm .card-item-data .card-body a {
+  cursor: pointer;
+}
 .card-pkm .card-item-data .card-body a:hover {
   color: #fff;
-  cursor: auto;
 }
 
 /* MORE BUTTON */
@@ -672,6 +676,111 @@ h2 {
 #atk button {
   box-shadow: none;
   margin: 2px 1px;
+}
+
+#detail .row > * {
+  padding-left: 0;
+  padding-right: 0;
+}
+#detail h3 {
+  margin-top: 100px;
+}
+#detail .shiny-img {
+  margin-top: 150px;
+}
+#detail a:hover {
+  color: #fff;
+}
+#detail .tabs_div {
+  color: black;
+}
+#detail .tabs_div .sui-tabs-item {
+  background-color: #BCC1BB;
+}
+#detail .tabs_div h4 {
+  margin-top: 10px;
+}
+#detail .tabs_div .title-type {
+  text-align: center;
+}
+#detail .tabs_div .title-type a {
+  margin: 2px;
+}
+#detail .tabs_div .evl .mega-evl {
+  transform: rotate(-15deg);
+}
+#detail .tabs_div .evl .giga-evl {
+  transform: rotate(15deg);
+}
+#detail .tabs_div hr {
+  border-style: dotted;
+  width: 80%;
+  margin-left: 75px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#detail .tabs_div span {
+  font-weight: 600;
+}
+#detail .male {
+  color: #79bcd7;
+}
+#detail .female {
+  color: #f42;
+}
+#detail .sui-tabs {
+  border: none;
+}
+#detail .tabs_div_img {
+  margin-top: 20px;
+}
+#detail .tabs_div_img button {
+  background-color: black;
+  color: white;
+  border: 1px solid;
+}
+#detail .tabs_div_img .checked-form {
+  border-bottom: none;
+}
+
+.stats-60 {
+  background-color: #ff7f0f;
+  height: 10px;
+  margin-top: 5px;
+  width: 33.3333333333%;
+  border-radius: 5px;
+}
+
+.stats-80 {
+  background-color: #ffdd57;
+  height: 10px;
+  margin-top: 5px;
+  width: 44.4444444444%;
+  border-radius: 5px;
+}
+
+.stats-100 {
+  background-color: #a0e515;
+  height: 10px;
+  margin-top: 5px;
+  width: 55.5555555556%;
+  border-radius: 5px;
+}
+
+.stats-120 {
+  background-color: #23cd5e;
+  height: 10px;
+  margin-top: 5px;
+  width: 66.6666666667%;
+  border-radius: 5px;
+}
+
+.stats-150 {
+  background-color: #00c2b8;
+  height: 10px;
+  margin-top: 5px;
+  width: 83.3333333333%;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=index.css.map */

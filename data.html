@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="http://www.shieldui.com/shared/components/latest/css/light-glow/all.min.css" />
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/slick.css">
     <link rel="stylesheet" href="../css/slick-theme.css">
@@ -46,27 +47,27 @@
                             <li class="d-inline-flex nav-data">
                                 <div class="nav-item">
                                 </div>
-                                <a href="data.html">PokeData</a>
+                                <a href="data.html">PokeDex</a>
                             </li>
                             <li class="d-inline-flex nav-movie">
                                 <div class="nav-item">
                                 </div>
-                                <a href="movie.html">PokeMovie</a>
+                                <a href="movie.html">PokeMoves</a>
                             </li>
                             <li class="d-inline-flex nav-game">
                                 <div class="nav-item">
                                 </div>
-                                <a href="game.html">PokeGame</a>
+                                <a href="game.html">PokeItem</a>
                             </li>
                             <li class="d-inline-flex nav-shop">
                                 <div class="nav-item">
                                 </div>
-                                <a href="shop.html">PokeShop</a>
+                                <a href="shop.html">PokeMovie</a>
                             </li>
                             <li class="d-inline-flex nav-news">
                                 <div class="nav-item">
                                 </div>
-                                <a href="news.html">PokeNews</a>
+                                <a href="news.html">PokeGame</a>
                             </li>
                         </ul>
                     </div>
@@ -79,19 +80,19 @@
                                 <a href="index.html">PokeHome</a>
                             </div>
                             <div class="nav-data">
-                                <a href="data.html">PokeData</a>
+                                <a href="data.html">PokeDex</a>
                             </div>
                             <div class="nav-movie">
-                                <a href="movie.html">PokeMovie</a>
+                                <a href="movie.html">PokeMoves</a>
                             </div>
                             <div class="nav-game">
-                                <a href="game.html">PokeGame</a>
+                                <a href="game.html">PokeItem</a>
                             </div>
                             <div class="nav-shop">
-                                <a href="shop.html">PokeShop</a>
+                                <a href="shop.html">PokeMovie</a>
                             </div>
                             <div class="nav-news">
-                                <a href="news.html">PokeNews</a>
+                                <a href="news.html">PokeGame</a>
                             </div>
                         </div>
                     </div>
@@ -108,13 +109,15 @@
 
                 <div class="d-flex justify-content-around ">
                     <form class="d-flex search-btn">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-success" type="submit" onclick="opengen(event, 'SEARCH')" id="block-btn">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Search Pokemon" aria-label="Search">
+                        <button class="btn btn-success" type="submit" onclick="opengen(event, 'SEARCH')"
+                            id="block-btn">Search</button>
                     </form>
                 </div>
 
                 <div class="tab-gen">
-                    <button class="tablinks active-dex active-dex" onclick="opengen(event, 'ALL')" id="defaultOpen"><a href="#top">ALL</a></button>
+                    <button class="tablinks active-dex active-dex" onclick="opengen(event, 'ALL')" id="defaultOpen"><a
+                            href="#top">ALL</a></button>
                 </div>
 
                 <div class="tab-type">
@@ -140,17 +143,29 @@
                     <div class="container">
                         <div class="row">
                         </div>
-                        <button onclick="moreFunc('SEARCH')" id="more-btn">More <span class="down_arrow"></span></button>
+                        <button onclick="moreFunc('SEARCH')" id="more-btn">More <span
+                                class="down_arrow"></span></button>
                     </div>
+                </div>
+
+                <div id="detail" style="color: white;">
+                    <div class="row"></div>
                 </div>
             </div>
 
             <!-- Attack dex -->
-            <div class="container" id="atk">
+            <!-- <div class="container" id="atk">
                 <h2>ATTACKDEX</h2>
                 <div class="tab-type">
                 </div>
-            </div>
+            </div> -->
+
+            <!-- Item Dex -->
+            <!-- <div class="container">
+                <h2>ITEMDEX</h2>
+                <div class="item-logo">
+                </div>
+            </div> -->
         </main>
 
         <!-- FOOTER -->
@@ -160,7 +175,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-5 d-flex flex-column">
                         <h4>Categories</h4>
-                        <a href="" >PokeData</a>
+                        <a href="">PokeData</a>
                         <a href="">PokeMovie</a>
                         <a href="">PokeGame</a>
                         <a href="">PokeShop</a>
@@ -212,16 +227,14 @@
         </footer>
     </div>
 
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/slick.js"></script>
-    <script src="../js/menu.js"></script>
-    <script src="../js/main-data.js"></script>
-    <script src="../js/tab.js"></script>
-    <script>
-        
-    </script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main-data.js"></script>
+    <script src="js/pkdex.js"></script>
+    <script src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 </body>
 
 </html>
