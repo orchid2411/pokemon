@@ -74,12 +74,12 @@ $(document).ready(() => {
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                         <div class="card-item">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                            <img id="${data.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." ondblclick="getidpkm('${data.id}')">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a id="${data.types[0].type.name}" class="btn one-item btn-${data.types[0].type.name}" onclick="getidtype('${data.types[0].type.name}')">${data.types[0].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                             </div>
@@ -91,18 +91,17 @@ $(document).ready(() => {
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                         <div class="card-item">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                            <img id="${data.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." ondblclick="getidpkm('${data.id}')">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a class="btn one-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a id="${data.types[0].type.name}" class="btn one-item btn-${data.types[0].type.name}" onclick="getidtype('${data.types[0].type.name}')">${data.types[0].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
                                             </div>
                                         </div>
                                     </div>`)
-
                                 }
                             }
                             else {
@@ -111,13 +110,13 @@ $(document).ready(() => {
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                         <div class="card-item">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                            <img id="${data.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." ondblclick="getidpkm('${data.id}')">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                    <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                    <a id="${data.types[0].type.name}" class="btn two-item btn-${data.types[0].type.name}" onclick="getidtype('${data.types[0].type.name}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a id="${data.types[1].type.name}" class="btn two-item btn-${data.types[1].type.name}" onclick="getidtype('${data.types[1].type.name}')">${data.types[1].type.name.toUpperCase()}</a>
                                                 </div>
                                                 <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
                                             </div>
@@ -129,15 +128,15 @@ $(document).ready(() => {
                                     <div>
                                         <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
                                         <div class="card-item">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="...">
+                                            <img id="${data.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." ondblclick="getidpkm('${data.id}')">
                                             <div class="card-body d-flex flex-column">
                                                 <span>#${tamid}</span>
                                                 <span>${data.name.toUpperCase()}</span>
                                                 <div class="d-flex">
-                                                    <a class="btn two-item btn-${data.types[0].type.name}">${data.types[0].type.name.toUpperCase()}</a>
-                                                    <a class="btn two-item btn-${data.types[1].type.name}">${data.types[1].type.name.toUpperCase()}</a>
+                                                    <a id="${data.types[0].type.name}" class="btn two-item btn-${data.types[0].type.name}" onclick="getidtype('${data.types[0].type.name}')">${data.types[0].type.name.toUpperCase()}</a>
+                                                    <a id="${data.types[1].type.name}" class="btn two-item btn-${data.types[1].type.name}" onclick="getidtype('${data.types[1].type.name}')">${data.types[1].type.name.toUpperCase()}</a>
                                                 </div>
-                                                <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
+                                                <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p></span>
                                             </div>
                                         </div>
                                     </div>`)
