@@ -1,0 +1,112 @@
+
+.items{      
+    ul{
+      display: flex;
+
+      li{
+          list-style: none;
+          padding: 10px;
+
+          .dropdown {
+            position: relative;
+            display: inline-block;
+
+            h4{
+                color: green;
+            }
+
+            .cate-title{
+                background-color: lightgreen;
+                height: 3px;
+                width: 0%;
+            }
+
+            &:hover .cate-title{
+                width: 100%;
+                transition: 1s;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: black;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+
+                a {
+                    color: white;
+                    padding: 12px 12px;
+                    text-decoration: none;
+                    display: block;
+                    cursor: pointer;
+                    text-align: center;
+                    .cate-item{
+                        background-color: $dragon;
+                        height: 3px;
+                        width: 0%;
+                    }
+                    &:hover .cate-item{
+                        width: 100%;
+                        transition: 1s;
+                    }
+                }
+            }
+
+            .dropdown-content2 {
+                @extend .dropdown-content;
+                left: 160px;
+              }
+
+            &:hover .dropdown-content {display: block;}
+          }
+      }
+    }
+}
+
+.item-list{
+
+    h2{
+        text-align: center;
+        color: $game;
+    }
+
+    .item-data{
+        // min-height: 500px;
+
+        p{
+            font-size: 18px;
+            color: grey;
+            text-align: center;
+        }
+    }
+
+    .item-pkm{
+        display: none;
+
+        h4 {
+            color: $data;
+            text-align: center;
+        }
+        h5{
+            color: $fairy;
+        }
+
+        .item-name{
+            color: $water;
+            font-weight: 500;
+        }
+
+        .item-img{
+            img{
+                width: 50%;
+            }
+        }
+
+        .item-effect{
+            span{
+                color: grey;
+            }
+        }
+    }
+}

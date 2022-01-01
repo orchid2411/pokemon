@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/slick-theme.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index-responsive.css">
+</head>
+
+<body onload="BackTopPage()">
+    <div id="top">
+
+        <!-- MOVE TOP -->
+        <div class="move-top">
+            <a href="#top">
+                <img src="../images/move-top.png" alt="">
+            </a>
+        </div>
+
+        <!-- HEADER -->
+        <header>
+            <div>
+                <div class="d-flex">
+                    <div class="div-logo">
+                        <a href="index.html">
+                            <img src="../images/logo.png" class="logo">
+                        </a>
+                    </div>
+                    <a href="javascript:void(0);" id="btn-menu" onclick="myFunction()">
+                        <button class="btn-menu-tab">MENU</button>
+                    </a>
+                    <div class="nav-menu-content" id="menu">
+                        <ul class="d-flex nav-menu">
+                            <li class="d-inline-flex nav-home">
+                                <div class="nav-item">
+                                </div>
+                                <a href="index.html">PokeHome</a>
+                            </li>
+                            <li class="d-inline-flex nav-data">
+                                <div class="nav-item">
+                                </div>
+                                <a href="data.html">PokeDex</a>
+                            </li>
+                            <li class="d-inline-flex nav-movie">
+                                <div class="nav-item">
+                                </div>
+                                <a href="moves.html">PokeMoves</a>
+                            </li>
+                            <li class="d-inline-flex nav-game">
+                                <div class="nav-item">
+                                </div>
+                                <a href="items.html">PokeItem</a>
+                            </li>
+                            <li class="d-inline-flex nav-shop">
+                                <div class="nav-item">
+                                </div>
+                                <a href="movie.html">PokeMovie</a>
+                            </li>
+                            <li class="d-inline-flex nav-news">
+                                <div class="nav-item">
+                                </div>
+                                <a href="games.html">PokeGame</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <span id="navi-mobile" onclick="openNav()">&#9776;</span>
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <div class="nav-home">
+                                <a href="index.html">PokeHome</a>
+                            </div>
+                            <div class="nav-data">
+                                <a href="data.html">PokeDex</a>
+                            </div>
+                            <div class="nav-movie">
+                                <a href="moves.html">PokeMoves</a>
+                            </div>
+                            <div class="nav-game">
+                                <a href="items.html">PokeItem</a>
+                            </div>
+                            <div class="nav-shop">
+                                <a href="movie.html">PokeMovie</a>
+                            </div>
+                            <div class="nav-news">
+                                <a href="games.html">PokeGame</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <div class="container">
+                <div class="row items">
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="row item-list">
+                    <h2>Pokemon Item List</h2>
+                    <div class="item-data">
+                        <p>This is a full list of every item pokemon from all 8 generations of the game series. You can click on the category to search for the item type.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <img src="../images/footer.png" alt="">
+            <div class="container footer-container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-5 d-flex flex-column">
+                        <h4>Categories</h4>
+                        <a href="" >PokeData</a>
+                        <a href="">PokeMovie</a>
+                        <a href="">PokeGame</a>
+                        <a href="">PokeShop</a>
+                        <a href="">PokeNews</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-5 d-flex flex-column">
+                        <h4>Contact Us</h4>
+                        <a href="mailto:orchid114111@gmail.com">Email: orchid114111@gmail.com</a>
+                        <a href="tel:0368216335">Phone: 0368216335</a>
+                        <a href="https://github.com/orchid2411" target="_blank">Github</a>
+                        <a href="">Linked: mcuong</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-5 d-flex flex-column">
+                        <h4>Connect With Social</h4>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-home">
+                                <i class="fas fa-circle fa-stack-2x "></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                <p>facebook</p>
+                            </span>
+                        </a>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-data">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                <p>twitter</p>
+                            </span>
+                        </a>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-movie">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-dribbble fa-stack-1x fa-inverse"></i>
+                                <p>dribbble</p>
+                            </span>
+                        </a>
+                        <a href="index.html" class="icon-ft">
+                            <span class="fa-stack fa-lg icon-game">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-google-plus-g fa-stack-1x fa-inverse"></i>
+                                <p>google+</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bot-ft">
+                <p>© 2021 Pokemon. All rights reserved | Design by <span>M.Cuong</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/pkdex.js"></script>
+    <script>
+        function getidpkm(aid) {
+            // let a = document.getElementById(aid)
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.clear();
+                sessionStorage.setItem('id', `${aid}`);
+            } else {
+                document.write('Trình duyệt của bạn không hỗ trợ local storage');
+            }
+            window.location="detailpkm.html";
+        }
+
+        function getidtype(aid) {
+            // let a = document.getElementById(aid)
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.clear();
+                sessionStorage.setItem('type', `${aid}`);
+            } else {
+                document.write('Trình duyệt của bạn không hỗ trợ local storage');
+            }
+            window.location="data.html";
+        }
+
+        function getidMname(aid) {
+            let a = document.getElementById(aid)
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.clear();
+                sessionStorage.setItem('mname', `${a.id}`);
+            } else {
+                document.write('Trình duyệt của bạn không hỗ trợ local storage');
+            }
+            window.location="detailmove.html";
+        }
+
+        function getTypeMove(aid) {
+            // let a = document.getElementById(aid)
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.clear();
+                sessionStorage.setItem('typemove', `${aid}`);
+            } else {
+                document.write('Trình duyệt của bạn không hỗ trợ local storage');
+            }
+            window.location="moves.html";
+        }
+    </script>
+</body>
+
+</html>

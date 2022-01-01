@@ -52,22 +52,22 @@
                             <li class="d-inline-flex nav-movie">
                                 <div class="nav-item">
                                 </div>
-                                <a href="movie.html">PokeMoves</a>
+                                <a href="moves.html">PokeMoves</a>
                             </li>
                             <li class="d-inline-flex nav-game">
                                 <div class="nav-item">
                                 </div>
-                                <a href="game.html">PokeItem</a>
+                                <a href="items.html">PokeItem</a>
                             </li>
                             <li class="d-inline-flex nav-shop">
                                 <div class="nav-item">
                                 </div>
-                                <a href="shop.html">PokeMovie</a>
+                                <a href="movie.html">PokeMovie</a>
                             </li>
                             <li class="d-inline-flex nav-news">
                                 <div class="nav-item">
                                 </div>
-                                <a href="news.html">PokeGame</a>
+                                <a href="games.html">PokeGame</a>
                             </li>
                         </ul>
                     </div>
@@ -83,16 +83,16 @@
                                 <a href="data.html">PokeDex</a>
                             </div>
                             <div class="nav-movie">
-                                <a href="movie.html">PokeMoves</a>
+                                <a href="moves.html">PokeMoves</a>
                             </div>
                             <div class="nav-game">
-                                <a href="game.html">PokeItem</a>
+                                <a href="items.html">PokeItem</a>
                             </div>
                             <div class="nav-shop">
-                                <a href="shop.html">PokeMovie</a>
+                                <a href="movie.html">PokeMovie</a>
                             </div>
                             <div class="nav-news">
-                                <a href="news.html">PokeGame</a>
+                                <a href="games.html">PokeGame</a>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,6 @@
             <!-- Pokedex -->
             <div class="container pkdex">
                 <h2>POKEDEX</h2>
-
                 <div class="d-flex justify-content-around ">
                     <form class="d-flex search-btn">
                         <input class="form-control me-2" type="search" placeholder="Search Pokemon" aria-label="Search">
@@ -116,7 +115,7 @@
                 </div>
 
                 <div class="tab-gen">
-                    <button class="tablinks active-dex active-dex" onclick="opengen(event, 'ALL')" id="defaultOpen"><a
+                    <button class="tablinks active-dex active-dex" onclick="opengen(event, 'ALL')" id="defaultOpen1"><a
                             href="#top">ALL</a></button>
                 </div>
 
@@ -131,14 +130,6 @@
                     </div>
                 </div>
 
-                <div id="GRASS" class="tabcontent dex">
-                    <div class="container">
-                        <div class="row">
-                        </div>
-                        <button onclick="moreFunc('GRASS')" id="more-btn">More <span class="down_arrow"></span></button>
-                    </div>
-                </div>
-
                 <div id="SEARCH" class="tabcontent dex">
                     <div class="container">
                         <div class="row">
@@ -149,7 +140,8 @@
                 </div>
 
                 <div id="detail" style="color: white;">
-                    <div class="row"></div>
+                    <div class="row">
+                    </div>
                 </div>
             </div>
 
@@ -235,6 +227,19 @@
     <script src="js/main-data.js"></script>
     <script src="js/pkdex.js"></script>
     <script src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+    <script>
+        function getidpkm(aid) {
+            let a = document.getElementById(aid)
+            console.log(a)
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.clear();
+                sessionStorage.setItem('id', `${a.id}`);
+            } else {
+                document.write('Trình duyệt của bạn không hỗ trợ local storage');
+            }
+            window.location="detailpkm.html";
+        }
+    </script>
 </body>
 
 </html>

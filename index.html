@@ -51,22 +51,22 @@
                             <li class="d-inline-flex nav-movie">
                                 <div class="nav-item">
                                 </div>
-                                <a href="movie.html">PokeMoves</a>
+                                <a href="moves.html">PokeMoves</a>
                             </li>
                             <li class="d-inline-flex nav-game">
                                 <div class="nav-item">
                                 </div>
-                                <a href="game.html">PokeItem</a>
+                                <a href="items.html">PokeItem</a>
                             </li>
                             <li class="d-inline-flex nav-shop">
                                 <div class="nav-item">
                                 </div>
-                                <a href="shop.html">PokeMovie</a>
+                                <a href="movie.html">PokeMovie</a>
                             </li>
                             <li class="d-inline-flex nav-news">
                                 <div class="nav-item">
                                 </div>
-                                <a href="news.html">PokeGame</a>
+                                <a href="games.html">PokeGame</a>
                             </li>
                         </ul>
                     </div>
@@ -82,16 +82,16 @@
                                 <a href="data.html">PokeDex</a>
                             </div>
                             <div class="nav-movie">
-                                <a href="movie.html">PokeMoves</a>
+                                <a href="moves.html">PokeMoves</a>
                             </div>
                             <div class="nav-game">
-                                <a href="game.html">PokeItem</a>
+                                <a href="items.html">PokeItem</a>
                             </div>
                             <div class="nav-shop">
-                                <a href="shop.html">PokeMovie</a>
+                                <a href="movie.html">PokeMovie</a>
                             </div>
                             <div class="nav-news">
-                                <a href="news.html">PokeGame</a>
+                                <a href="games.html">PokeGame</a>
                             </div>
                         </div>
                     </div>
@@ -236,7 +236,28 @@
     <script src="js/slick.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/main-index.js"></script>
-    <script src="js/pkdex.js"></script>
+    <script>
+        function getidpkm(aid) {
+            let a = document.getElementById(aid)
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.clear();
+                sessionStorage.setItem('id', `${a.id}`);
+            } else {
+                document.write('Trình duyệt của bạn không hỗ trợ local storage');
+            }
+            window.location="detailpkm.html";
+        }
+        function getidtype(aid) {
+            let a = document.getElementById(aid)
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.clear();
+                sessionStorage.setItem('type', `${a.id}`);
+            } else {
+                document.write('Trình duyệt của bạn không hỗ trợ local storage');
+            }
+            window.location="data.html";
+        }
+    </script>
 </body>
 
 </html>

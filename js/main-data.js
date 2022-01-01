@@ -1,154 +1,331 @@
 $(document).ready(() => {
 
+    const end_point_pkm = 'https://pokeapi.co/api/v2/pokemon/';
+    const end_point_gen = 'https://pokeapi.co/api/v2/generation/';
+    const end_point_type = 'https://pokeapi.co/api/v2/type/';
+
     function ktIDMore(i, more) {
         if (i <= more) return k = 0;
         if ((i > more) && (i <= more + 12)) return k = 1;
         if (i > more + 12) return k = 2;
     }
 
+    function IdPkm(id) {
+        let tamid = id;
+        if (tamid < 10) {
+            tamid = `00${tamid}`
+        }
+        if ((tamid >= 10) && (tamid < 100)) {
+            tamid = `0${tamid}`
+        }
+        return tamid;
+    }
+
+    function OneTypeOneAbi(kq, location, k) {
+        let tamid = IdPkm(kq.id)
+        $(`#${location}>.container>.row`).append(`
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+                <div class="card-pkm">
+                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+                    <div class="card-item-data">
+                        <img id="${kq.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="getidpkm('${kq.id}')">
+                        <div class="card-body d-flex flex-column">
+                            <span>#${tamid}</span>
+                            <span>${kq.name.toUpperCase()}</span>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn one-item btn-${kq.types[0].type.name}" onclick="opengen(event, '${kq.types[0].type.name.toUpperCase()}')">${kq.types[0].type.name.toUpperCase()}</a>
+                            </div>
+                            <span>Abilities: <p>${kq.abilities[0].ability.name}</p> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `)
+    }
+
+    function OneTypeTwoAbi(kq, location, k) {
+        let tamid = IdPkm(kq.id)
+        $(`#${location}>.container>.row`).append(`
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+                <div class="card-pkm">
+                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+                    <div class="card-item-data">
+                        <img id="${kq.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="getidpkm('${kq.id}')">
+                        <div class="card-body d-flex flex-column">
+                            <span>#${tamid}</span>
+                            <span>${kq.name.toUpperCase()}</span>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn one-item btn-${kq.types[0].type.name}" onclick="opengen(event, '${kq.types[0].type.name.toUpperCase()}')">${kq.types[0].type.name.toUpperCase()}</a>
+                            </div>
+                            <span>Abilities: <p>${kq.abilities[0].ability.name} / ${kq.abilities[1].ability.name}</p> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `)
+    }
+
+    function TwoTypeOneAbi(kq, location, k) {
+        let tamid = IdPkm(kq.id)
+        $(`#${location}>.container>.row`).append(`
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+                <div class="card-pkm">
+                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+                    <div class="card-item-data">
+                        <img id="${kq.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="getidpkm('${kq.id}')">
+                        <div class="card-body d-flex flex-column">
+                            <span>#${tamid}</span>
+                            <span>${kq.name.toUpperCase()}</span>
+                            <div class="d-flex justify-content-around">
+                                <a class="btn two-item btn-${kq.types[0].type.name}" onclick="opengen(event, '${kq.types[0].type.name.toUpperCase()}')">${kq.types[0].type.name.toUpperCase()}</a>
+                                <a class="btn two-item btn-${kq.types[1].type.name}" onclick="opengen(event, '${kq.types[1].type.name.toUpperCase()}')">${kq.types[1].type.name.toUpperCase()}</a>
+                            </div>
+                            <span>Abilities: <p>${kq.abilities[0].ability.name}</p> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `)
+    }
+
+    function TwoTypeTwoAbi(kq, location, k) {
+        let tamid = IdPkm(kq.id)
+        $(`#${location}>.container>.row`).append(`
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+                <div class="card-pkm">
+                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+                    <div class="card-item-data">
+                        <img id="${kq.id}" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="getidpkm('${kq.id}')">
+                        <div class="card-body d-flex flex-column">
+                            <span>#${tamid}</span>
+                            <span>${kq.name.toUpperCase()}</span>
+                            <div class="d-flex justify-content-around">
+                                <a class="btn two-item btn-${kq.types[0].type.name}" onclick="opengen(event, '${kq.types[0].type.name.toUpperCase()}')">${kq.types[0].type.name.toUpperCase()}</a>
+                                <a class="btn two-item btn-${kq.types[1].type.name}" onclick="opengen(event, '${kq.types[1].type.name.toUpperCase()}')">${kq.types[1].type.name.toUpperCase()}</a>
+                            </div>
+                            <span>Abilities: <p>${kq.abilities[0].ability.name} / ${kq.abilities[1].ability.name}</p> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `)
+    }
+
+    /* Form Pokemon */
+    // async function RenderForm(kq_spe_pkm, location) {
+    //     let check = 1;
+    //     for (let i = 1; i < kq_spe_pkm.varieties.length; i++) {
+    //         let name = kq_spe_pkm.varieties[i].pokemon.name.replace(`${kq_spe_pkm.varieties[0].pokemon.name}-`,'')
+    //         switch (name) {
+    //             case 'mega': { check++; break;} 
+    //             case 'mega-x': { check++; break;} 
+    //             case 'mega-y': { check++; break;} 
+    //             case 'alola': { check++; break;}
+    //             case 'galar': { check++; break;} 
+    //             case 'gmax': { check++; break;} 
+    //             default: { check = 1; break;} 
+    //         }
+    //         if (check != 1) {
+    //             let resp_form = await fetch(`${kq_spe_pkm.varieties[i].pokemon.url}`)
+    //             let kq_form = await resp_form.json()
+    //             k = 0
+    //             let tamid = kq_spe_pkm.id;
+    //             if (tamid < 10) {
+    //                 tamid = `00${tamid}`
+    //             }
+    //             if ((tamid >= 10) && (tamid < 100)) {
+    //                 tamid = `0${tamid}`
+    //             }
+    //             if (kq_form.types.length === 1) {
+    //                 if (kq_form.abilities.length === 1) {
+    //                     $(`#${location}>.container>.row`).append(`
+    //                     <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+    //                         <div class="card-pkm">
+    //                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+    //                             <div class="card-item-data">
+    //                                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}_f${check}.png" alt="..." onclick="DetailPKM('${kq_form.id}')">
+    //                                 <div class="card-body d-flex flex-column">
+    //                                     <span>#${tamid}</span>
+    //                                     <span>${kq_form.name.toUpperCase()}</span>
+    //                                     <div class="d-flex justify-content-center">
+    //                                         <a class="btn one-item btn-${kq_form.types[0].type.name}" onclick="opengen(event, '${kq_form.types[0].type.name.toUpperCase()}')">${kq_form.types[0].type.name.toUpperCase()}</a>
+    //                                     </div>
+    //                                     <span>Abilities: <p>${kq_form.abilities[0].ability.name}</p> </span>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     `)
+    //                 }
+    //                 else {
+    //                     $(`#${location}>.container>.row`).append(`
+    //                     <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+    //                         <div class="card-pkm">
+    //                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+    //                             <div class="card-item-data">
+    //                                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}_f${check}.png" alt="..." onclick="DetailPKM('${kq_form.id}')">
+    //                                 <div class="card-body d-flex flex-column">
+    //                                     <span>#${tamid}</span>
+    //                                     <span>${kq_form.name.toUpperCase()}</span>
+    //                                     <div class="d-flex justify-content-center">
+    //                                         <a class="btn one-item btn-${kq_form.types[0].type.name}" onclick="opengen(event, '${kq_form.types[0].type.name.toUpperCase()}')">${kq_form.types[0].type.name.toUpperCase()}</a>
+    //                                     </div>
+    //                                     <span>Abilities: <p>${kq_form.abilities[0].ability.name} / ${kq_form.abilities[1].ability.name}</p> </span>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     `)
+    //                 }
+    //             }
+    //             else {
+    //                 if (kq_form.abilities.length === 1) {
+    //                     $(`#${location}>.container>.row`).append(`
+    //                     <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+    //                         <div class="card-pkm">
+    //                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+    //                             <div class="card-item-data">
+    //                                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}_f${check}.png" alt="..." onclick="DetailPKM('${kq_form.id}')">
+    //                                 <div class="card-body d-flex flex-column">
+    //                                     <span>#${tamid}</span>
+    //                                     <span>${kq_form.name.toUpperCase()}</span>
+    //                                     <div class="d-flex justify-content-around">
+    //                                         <a class="btn two-item btn-${kq_form.types[0].type.name}" onclick="opengen(event, '${kq_form.types[0].type.name.toUpperCase()}')">${kq_form.types[0].type.name.toUpperCase()}</a>
+    //                                         <a class="btn two-item btn-${kq_form.types[1].type.name}" onclick="opengen(event, '${kq_form.types[1].type.name.toUpperCase()}')">${kq_form.types[1].type.name.toUpperCase()}</a>
+    //                                     </div>
+    //                                     <span>Abilities: <p>${kq_form.abilities[0].ability.name}</p> </span>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     `)
+    //                 }
+    //                 else {
+    //                     $(`#${location}>.container>.row`).append(`
+    //                     <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
+    //                         <div class="card-pkm">
+    //                             <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
+    //                             <div class="card-item-data">
+    //                                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}_f${check}.png" alt="..." onclick="DetailPKM('${kq_form.id}')">
+    //                                 <div class="card-body d-flex flex-column">
+    //                                     <span>#${tamid}</span>
+    //                                     <span>${kq_form.name.toUpperCase()}</span>
+    //                                     <div class="d-flex justify-content-around">
+    //                                         <a class="btn two-item btn-${kq_form.types[0].type.name}" onclick="opengen(event, '${kq_form.types[0].type.name.toUpperCase()}')">${kq_form.types[0].type.name.toUpperCase()}</a>
+    //                                         <a class="btn two-item btn-${kq_form.types[1].type.name}" onclick="opengen(event, '${kq_form.types[1].type.name.toUpperCase()}')">${kq_form.types[1].type.name.toUpperCase()}</a>
+    //                                     </div>
+    //                                     <span>Abilities: <p>${kq_form.abilities[0].ability.name} / ${kq_form.abilities[1].ability.name}</p> </span>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     `)
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
     async function RenderPKM(start, end, location) {
         for (let i = start; i < end; i++) {
-            await fetch(end_point_pkm.concat(`${i}`))
-                .then((resp) => resp.json())
-                .then((data) => { 
-                    k = ktIDMore(i, start + 11);
-                    let tamid = data.id;
-                    if (data.id < 10) {
-                        tamid = `00${data.id}`
-                    }
-                    if ((data.id >= 10) && (data.id < 100)) {
-                        tamid = `0${data.id}`
-                    }
-                    if (data.types.length === 1) {
-                        if (data.abilities.length === 1) {
-                            $(`#${location}>.container>.row`).append(`
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                <div class="card-pkm">
-                                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                    <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                        <div class="card-body d-flex flex-column">
-                                            <span>#${tamid}</span>
-                                            <span>${data.name.toUpperCase()}</span>
-                                            <div class="d-flex justify-content-center">
-                                                <a class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                            </div>
-                                            <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            `)
-                        }
-                        else {
-                            $(`#${location}>.container>.row`).append(`
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                <div class="card-pkm">
-                                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                    <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                        <div class="card-body d-flex flex-column">
-                                            <span>#${tamid}</span>
-                                            <span>${data.name.toUpperCase()}</span>
-                                            <div class="d-flex justify-content-center">
-                                                <a class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                            </div>
-                                            <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            `)
-                        }
-                    }
-                    else {
-                        if (data.abilities.length === 1) {
-                            $(`#${location}>.container>.row`).append(`
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                <div class="card-pkm">
-                                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                    <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                        <div class="card-body d-flex flex-column">
-                                            <span>#${tamid}</span>
-                                            <span>${data.name.toUpperCase()}</span>
-                                            <div class="d-flex justify-content-around">
-                                                <a class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                <a class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
-                                            </div>
-                                            <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            `)
-                        }
-                        else {
-                            $(`#${location}>.container>.row`).append(`
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                <div class="card-pkm">
-                                    <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                    <div class="card-item-data">
-                                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                        <div class="card-body d-flex flex-column">
-                                            <span>#${tamid}</span>
-                                            <span>${data.name.toUpperCase()}</span>
-                                            <div class="d-flex justify-content-around">
-                                                <a class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                <a class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
-                                            </div>
-                                            <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            `)
-                        }
-                    }
-                })
+            let resp_pkm = await fetch(end_point_pkm.concat(`${i}`))
+            let kq_pkm = await resp_pkm.json();
+            k = ktIDMore(i, start + 11);
+            if (kq_pkm.types.length === 1) {
+                if (kq_pkm.abilities.length === 1) {
+                    OneTypeOneAbi(kq_pkm, location, k)
+                }
+                else {
+                    OneTypeTwoAbi(kq_pkm, location, k)
+                }
+            }
+            else {
+                if (kq_pkm.abilities.length === 1) {
+                    TwoTypeOneAbi(kq_pkm, location, k)
+                }
+                else {
+                    TwoTypeTwoAbi(kq_pkm, location, k)
+                }
+            }
+
+            // let resp_species = await fetch(`${kq_pkm.species.url}`)
+            // let kq_species = await resp_species.json()
+            // if (kq_species.varieties.length > 1) await RenderForm(kq_species, location)
         }
     }
 
+    async function RenderType(type) {
+        let resp_type = await fetch(end_point_type.concat(`${type}`))
+        let kq_type = await resp_type.json();
+        for (let i = 0; i < kq_type.pokemon.length; i++) {
+            let resp_pkm = await fetch(`${kq_type.pokemon[i].pokemon.url}`)
+            let kq_pkm = await resp_pkm.json();
+            if (kq_pkm.id > 10000) break;
+            k = ktIDMore(i, 11);
+            let tamid = kq_pkm.id;
+            if (tamid < 10) {
+                tamid = `00${tamid}`
+            }
+            if ((tamid >= 10) && (tamid < 100)) {
+                tamid = `0${tamid}`
+            }
+            if (kq_pkm.types.length === 1) {
+                if (kq_pkm.abilities.length === 1) {
+                    OneTypeOneAbi(kq_pkm, type.toUpperCase(), k)
+                }
+                else {
+                    OneTypeTwoAbi(kq_pkm, type.toUpperCase(), k)
+                }
+            }
+            else {
+                if (kq_pkm.abilities.length === 1) {
+                    TwoTypeOneAbi(kq_pkm, type.toUpperCase(), k)
+                }
+                else {
+                    TwoTypeTwoAbi(kq_pkm, type.toUpperCase(), k)
+                }
+            }
+        }
+    }
 
     /* COUNTRY */
-    const end_point_gen = 'https://pokeapi.co/api/v2/generation/';
-    fetch(end_point_gen)
-        .then((resp) => resp.json())
-        .then((data) => {
-            const result_gen = data.count + 1;
-            for (let i = 1; i < result_gen; i++) {
-                fetch(end_point_gen.concat(`${i}`))
-                    .then((resp) => resp.json())
-                    .then((data) => {
-                        $('.pkdex').append(`
-                        <div id="${data.main_region.name.toUpperCase()}" class="tabcontent">
-                            <div class="container">
-                                <div class="row">
-                                </div>
-                                <button onclick="moreFunc('${data.main_region.name.toUpperCase()}')" id="more-btn">More <span class="down_arrow"></span></button>
-                            </div>
+    async function RenderPkmGen() {
+        let resp_gen = await fetch(end_point_gen)
+        let kq_gen = await resp_gen.json()
+        let result_gen = kq_gen.count +1;
+        let tam = 0;
+        for (let i = 1; i < result_gen; i++) {
+            let resp_loca = await fetch(end_point_gen.concat(`${i}`))
+            let kq_loca = await resp_loca.json()
+            $('.pkdex').append(`
+                <div id="${kq_loca.main_region.name.toUpperCase()}" class="tabcontent">
+                    <div class="container">
+                        <div class="row">
                         </div>
-                        `)
-                    })
-                }
-        })
+                        <button onclick="moreFunc('${kq_loca.main_region.name.toUpperCase()}')" id="more-btn">More <span class="down_arrow"></span></button>
+                    </div>
+                </div>
+            `)
+            RenderPKM(tam + 1, tam + kq_loca.pokemon_species.length + 1, kq_loca.main_region.name.toUpperCase())
+            tam = tam + kq_loca.pokemon_species.length;
+        }
+    }
+    RenderPkmGen()
     /* button country */
-    fetch(end_point_gen)
-        .then((resp) => resp.json())
-        .then(async (data) => {
-            const result_gen = data.count +1;
-            for (let i = 1; i < result_gen; i++) {
-                await fetch(end_point_gen.concat(`${i}`))
-                    .then((resp) => resp.json())
-                    .then((data) => {
-                        $('.tab-gen').append(`
-                            <button class="tablinks" onclick="opengen(event, '${data.main_region.name.toUpperCase()}')"><a href="#top">${data.main_region.name.toUpperCase()}</a></button>
-                        `)
-                    })
-                }
-        })
+    async function RenderBtnGen() {
+        let resp_gen = await fetch(end_point_gen)
+        let kq_gen = await resp_gen.json()
+        let result_gen = kq_gen.count +1;
+        for (let i = 1; i < result_gen; i++) {
+            let resp_loca = await fetch(end_point_gen.concat(`${i}`))
+            let kq_loca = await resp_loca.json()
+            $('.tab-gen').append(`
+                <button class="tablinks" onclick="opengen(event, '${kq_loca.main_region.name.toUpperCase()}')"><a href="#top">${kq_loca.main_region.name.toUpperCase()}</a></button>
+            `)
+        }
+    }
+    RenderBtnGen()
 
     /* TYPE */
-    const end_point_type = 'https://pokeapi.co/api/v2/type/';
     fetch(end_point_type)
         .then((resp) => resp.json())
         .then((data) => {
@@ -166,24 +343,14 @@ $(document).ready(() => {
                             </div>
                         </div>
                         `)
-                        $('#atk').append(`
-                        <div class="panel" id="${data.name.toUpperCase()}-ATK">
-                            <table class="table-move">
-                                <caption> <a class="btn btn-${data.name}">${data.name.toUpperCase()}</a></caption>
-                                <tr>
-                                    <th>Move</th>
-                                    <th>Atk Type</th>
-                                    <th>Power</th>
-                                    <th>P.Point</th>
-                                    <th>Accuracy</th>
-                                </tr>
-                            </table>
-                        </div>
-                        `)
+                        RenderType(data.name)
                     })
             }
         })
+        
     /* button type */
+    let type = sessionStorage.getItem('type');
+    sessionStorage.setItem('type', '')
     fetch(end_point_type)
         .then((resp) => resp.json())
         .then((data) => {
@@ -192,220 +359,23 @@ $(document).ready(() => {
                 fetch(end_point_type.concat(`${i}`))
                     .then((resp) => resp.json())
                     .then((data) => {
-                        $('.pkdex>.tab-type').append(`
-                            <button class="btn btn-${data.name}" onclick="opengen(event, '${data.name.toUpperCase()}')">${data.name.toUpperCase()}</button>
-                        `)
-                        $('#atk>.tab-type').append(`
-                            <button class="btn btn-${data.name} accordion" onclick="openatk('${data.name.toUpperCase()}-ATK')" id="${data.name.toUpperCase()}-ATK">${data.name.toUpperCase()}</button>
-                        `)
-                    })
-            }
-        })
-
-    const end_point_pkm = 'https://pokeapi.co/api/v2/pokemon/';
-    /* ALL DEX */
-    fetch(end_point_pkm)
-    .then((resp) => resp.json())
-    .then(async () => {
-        await RenderPKM(1,899, 'ALL')
-    })
-    
-
-    /* PKM KANTO */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(1, 152, 'KANTO') 
-        })
-
-    /* PKM JOHTO */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(152, 252, 'JOHTO') 
-        })
-
-    /* PKM HOENN */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(252, 387, 'HOENN') 
-        })
-
-    /* PKM SINNOH */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(387, 494, 'SINNOH') 
-        })
-
-    /* PKM UNOVA */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(494, 650, 'UNOVA') 
-        })
-
-    /* PKM KALOS */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(650, 722, 'KALOS') 
-        })
-
-    /* PKM ALOLA */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(722, 810, 'ALOLA') 
-        })
-
-    /* PKM GALAR */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            await RenderPKM(810, 899, 'GALAR') 
-        })
-
-    /* PKM TYPE */
-    fetch(end_point_pkm)
-        .then((resp) => resp.json())
-        .then(async () => {
-            for (let i = 1; i < 899; i++) {
-                await fetch(end_point_pkm.concat(`${i}`))
-                    .then((resp) => resp.json())
-                    .then((data) => {
-                        let k = 0;
-                        let tamid = data.id;
-                        if (data.id < 10) {
-                            tamid = `00${data.id}`
-                        }
-                        if ((data.id >= 10) && (data.id < 100)) {
-                            tamid = `0${data.id}`
-                        }
-                        if (data.types.length === 1) {
-                            count = countType(data.types[0].type.name);
-                            k = ktIDMore(count, 12);
-                            if (data.abilities.length === 1) {
-                                $(`#${data.types[0].type.name.toUpperCase()}>.container>.row`).append(`
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                    <div class="card-pkm">
-                                        <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                        <div class="card-item-data">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                            <div class="card-body d-flex flex-column">
-                                                <span>#${tamid}</span>
-                                                <span>${data.name.toUpperCase()}</span>
-                                                <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                </div>
-                                                <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                `)
-                            }
-                            else {
-                                $(`#${data.types[0].type.name.toUpperCase()}>.container>.row`).append(`
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                    <div class="card-pkm">
-                                        <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                        <div class="card-item-data">
-                                            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                            <div class="card-body d-flex flex-column">
-                                                <span>#${tamid}</span>
-                                                <span>${data.name.toUpperCase()}</span>
-                                                <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                </div>
-                                                <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                `)
-                            }
+                        if (data.name === type) {
+                            $('.pkdex>.tab-type').append(`
+                            <button id="defaultOpen" class="btn btn-${data.name}" onclick="opengen(event, '${data.name.toUpperCase()}')">${data.name.toUpperCase()}</button>
+                            `)
+                            $("#defaultOpen").click();
                         }
                         else {
-                            for (let n = 0; n < data.types.length; n++) {
-                                count = countType(data.types[n].type.name);
-                                k = ktIDMore(count, 12);
-                                if (data.abilities.length === 1) {
-                                    $(`#${data.types[n].type.name.toUpperCase()}>.container>.row`).append(`
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                        <div class="card-pkm">
-                                            <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                            <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                                <div class="card-body d-flex flex-column">
-                                                    <span>#${tamid}</span>
-                                                    <span>${data.name.toUpperCase()}</span>
-                                                    <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
-                                                    </div>
-                                                    <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    `)
-                                }
-                                else {
-                                    $(`#${data.types[n].type.name.toUpperCase()}>.container>.row`).append(`
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                        <div class="card-pkm">
-                                            <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                            <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                                <div class="card-body d-flex flex-column">
-                                                    <span>#${tamid}</span>
-                                                    <span>${data.name.toUpperCase()}</span>
-                                                    <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
-                                                    </div>
-                                                    <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    `)
-                                }
-                            }
+                            $('.pkdex>.tab-type').append(`
+                            <button class="btn btn-${data.name}" onclick="opengen(event, '${data.name.toUpperCase()}')">${data.name.toUpperCase()}</button>
+                            `)
                         }
                     })
             }
         })
 
-    /* crate count type */
-    let normal = fighting = flying = poison = ground = rock = bug = ghost = steel = fire = water = grass = electric = psychic = ice = dragon = dark = fairy = 1;
-
-    function countType(type) {
-        switch (type)
-        {
-            case 'normal': {return normal++;}
-            case 'fighting': {return fighting++;}
-            case 'flying': {return flying++;}
-            case 'poison': {return poison++;}
-            case 'ground': {return ground++;}
-            case 'rock': {return rock++;}
-            case 'bug': {return bug++;}
-            case 'ghost': {return ghost++;}
-            case 'steel': {return steel++;}
-            case 'fire': {return fire++;}
-            case 'water': {return water++;}
-            case 'grass': {return grass++;}
-            case 'electric': {return electric++;}
-            case 'psychic': {return psychic++;}
-            case 'ice': {return ice++;}
-            case 'dragon': {return dragon++;}
-            case 'dark': {return dark++;}
-            case 'fairy': {return fairy++;}
-        }
-
-    }  
+    /* ALL DEX */
+    RenderPKM(1,899, 'ALL')
 
     $('form').on('submit', evt);
     async function evt(e) {
@@ -433,112 +403,32 @@ $(document).ready(() => {
                 else {
                     blockBtn.disabled = false;
                 }
-                await fetch(end_point_pkm.concat(`${i}`))
-                    .then((resp) => resp.json())
-                    .then((data) => {
-                        
-                        let k=0;
-                        let tamid = data.id.toString();
-                        if (data.id < 10) {
-                            tamid = `00${data.id}`
+
+                let resp_pkm = await fetch(end_point_pkm.concat(`${i}`))
+                let kq_pkm = await resp_pkm.json()
+                if ((kq_pkm.name.search(strSearch) != -1) || (kq_pkm.id.toString().search(strSearch) != -1)) {
+                    kt++;
+                    let k = ktIDMore(kt, 12);
+                    if (kt > 12) {
+                        more_btn.style.display = "block";
+                    }
+                    if (kq_pkm.types.length === 1) {
+                        if (kq_pkm.abilities.length === 1) {
+                            OneTypeOneAbi(kq_pkm, 'SEARCH', k)
                         }
-                        if ((data.id >= 10) && (data.id < 100)) {
-                            tamid = `0${data.id}`
+                        else {
+                            OneTypeTwoAbi(kq_pkm, 'SEARCH', k)
                         }
-                        if ((data.name.search(strSearch) != -1) || (tamid.search(strSearch) != -1)) {
-                            kt++;
-                            k = ktIDMore(kt, 12);
-                            if (kt > 12) {
-                                more_btn.style.display = "block";
-                            }
-                            if (data.types.length === 1) {
-                                if (data.abilities.length === 1) {
-                                    $('#SEARCH>.container>.row').append(`
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                        <div class="card-pkm">
-                                            <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                            <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                                <div class="card-body d-flex flex-column">
-                                                    <span>#${tamid}</span>
-                                                    <span>${data.name.toUpperCase()}</span>
-                                                    <div class="d-flex justify-content-center">
-                                                        <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                    </div>
-                                                    <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    `)
-                                }
-                                else {
-                                    $('#SEARCH>.container>.row').append(`
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                        <div class="card-pkm">
-                                            <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                            <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                                <div class="card-body d-flex flex-column">
-                                                    <span>#${tamid}</span>
-                                                    <span>${data.name.toUpperCase()}</span>
-                                                    <div class="d-flex justify-content-center">
-                                                        <a href="#" class="btn one-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                    </div>
-                                                    <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    `)
-                                }
-                            }
-                            else {
-                                if (data.abilities.length === 1) {
-                                    $('#SEARCH>.container>.row').append(`
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                        <div class="card-pkm">
-                                            <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                            <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                                <div class="card-body d-flex flex-column">
-                                                    <span>#${tamid}</span>
-                                                    <span>${data.name.toUpperCase()}</span>
-                                                    <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
-                                                    </div>
-                                                    <span>Abilities: <p>${data.abilities[0].ability.name}</p> </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    `)
-                                }
-                                else {
-                                    $('#SEARCH>.container>.row').append(`
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6" id="more-${k}">
-                                        <div class="card-pkm">
-                                            <img src="../images/list_pokemon_bg.png" alt="" class="back-card">
-                                            <div class="card-item-data">
-                                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${tamid}.png" alt="..." onclick="DetailPKM('${data.id}')">
-                                                <div class="card-body d-flex flex-column">
-                                                    <span>#${tamid}</span>
-                                                    <span>${data.name.toUpperCase()}</span>
-                                                    <div class="d-flex justify-content-around">
-                                                        <a href="#" class="btn two-item btn-${data.types[0].type.name}" onclick="opengen(event, '${data.types[0].type.name.toUpperCase()}')">${data.types[0].type.name.toUpperCase()}</a>
-                                                        <a href="#" class="btn two-item btn-${data.types[1].type.name}" onclick="opengen(event, '${data.types[1].type.name.toUpperCase()}')">${data.types[1].type.name.toUpperCase()}</a>
-                                                    </div>
-                                                    <span>Abilities: <p>${data.abilities[0].ability.name} / ${data.abilities[1].ability.name}</p> </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    `)
-                                }
-                            }
+                    }
+                    else {
+                        if (kq_pkm.abilities.length === 1) {
+                            TwoTypeOneAbi(kq_pkm, 'SEARCH', k)
                         }
-                    })
+                        else {
+                            TwoTypeTwoAbi(kq_pkm, 'SEARCH', k)
+                        }
+                    }
+                }
             }
             if (kt === 0) {
                 $('#SEARCH>.container>.row').empty();

@@ -1,0 +1,30 @@
+.switchbtn {
+    color: gray;
+    background-color: rgba($color: $black, $alpha: 0.1);
+    border: none;
+    padding: 3px 15px;
+    &:hover{
+        color: black;
+        background-color: lightgray;
+        transition: 0.5s;
+    }
+}
+
+.prebtn {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.nextbtn {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.coltmcase{
+    a{
+        cursor: pointer;
+        &:hover{
+            color: black !important;
+        }
+    }
+}

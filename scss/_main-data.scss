@@ -6,7 +6,7 @@ h2 {
 
 /* POKEDEX */
 .pkdex {
-    padding-top: 100px;
+    // padding-top: 100px;
 
     .search-btn {
         margin: 30px 0;
@@ -207,14 +207,23 @@ h2 {
 }
 
 #atk {
-    padding: 100px 5px;
+    // padding: 100px 5px;
 
     button {
         box-shadow: none;
         margin: 2px 1px;
     }
+
+    .table-move{
+        .moves{
+            a{
+                cursor: pointer;
+            }
+        }
+    }
 }
 
+/* detail pkm */
 #detail {
     .row > * {
         padding-left: 0;
@@ -254,12 +263,16 @@ h2 {
         }
 
         .evl {
-            .mega-evl {
-                transform: rotate(-15deg);
+            img {
+                cursor: pointer;
+                width: 100%;
             }
-            .giga-evl {
-                transform: rotate(15deg);
-            }
+            // .mega-evl {
+            //     transform: rotate(-15deg);
+            // }
+            // .giga-evl {
+            //     transform: rotate(15deg);
+            // }
         }
 
         hr {
@@ -306,8 +319,58 @@ $i: 1;
             background-color: nth($indexs, $i);
             height: 10px;
             margin-top: 5px;
-            width: $index*100%/180;
+            // width: $index*100%/180;
             border-radius: 5px;
     }
     $i: $i + 1;
+}
+
+.icon-arrow {
+    display: block;
+    font: normal 3.5rem/1 "Arial Unicode MS","Trebuchet MS","Arial","Helvetica",sans-serif;
+}
+
+.icon-arrow-e::before {
+    content: "\2192\FE0E";
+}
+
+.koecard {
+    margin-top: 80px;
+    // margin-left: 50px;
+}
+
+.detailpkm {
+    // padding-top: 150px;
+}
+
+.btn-gen {
+    margin: 5px;
+    border-radius: 50%;
+    width: 28px;
+    background-color: lightgrey;
+}
+
+.checked-gen {
+    background-color: white;
+}
+
+.tabs_div_move {
+    .table-move{
+        text-align: center;
+        width: 96%;
+
+        th {
+            // width: 16%;
+            background-color: #585858 ;
+            border: black 1px solid;
+            padding: 5px;
+            color: white;
+        }
+
+        td {
+            background-color: #dbdbdb;
+            // border: black 1px solid;
+            padding: 10px;
+        }
+    }
 }

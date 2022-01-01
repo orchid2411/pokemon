@@ -1,0 +1,93 @@
+.move-detail{
+    line-height: 1.8;
+
+    h2{
+        color: #7fe5f0;
+    }
+
+    h3{
+        color: whitesmoke;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    p{
+        color: gray;
+    }
+
+    .item-move-data{
+        p{
+            // float: right;
+            text-align: right;
+        }
+    }
+
+    .item-move-value{
+        span{
+            font-size: 12px;
+        }
+    }
+
+    .btn{
+        height: 25px;
+        padding: 0;
+    }
+
+    .img-status-move-data{
+        width: 25%;
+    }
+
+    .pkm-learn {
+        .pkm-name{
+            color: #2769be;
+            font-weight: 900;
+        }
+
+        p{
+            span {
+                cursor: pointer;
+            }
+        }
+
+        img{
+            cursor: pointer;
+        }
+    }
+
+    /* Color type */
+    $i: 1;
+    @each $type in $name-types {
+        .text-#{$type} {
+                color: nth($types, $i) !important;
+        }
+        $i: $i + 1;
+    }
+
+    .game-description{
+        .gen{
+            .descriptions{
+                line-height: 0.2;
+                text-align: right;
+            }
+            .descriptions-value{
+                line-height: 0.9;
+            }
+        }
+    }
+
+    .machine-record{
+        .gen{
+            .record-left{
+                line-height: 0.2;
+                text-align: center;
+                padding-right: 0;
+            }
+            .record-right{
+                // padding-left: 0;
+                p{
+                    color: $dragon;
+                }
+            }
+        }
+    }
+}
